@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj0s26qye7tdl"]
+
+[ext_resource type="Script" path="res://scripts/laser_gun.gd" id="1_dan8w"]
+[ext_resource type="Texture2D" uid="uid://d3f0whakas5om" path="res://assets/weapons/weapons.png" id="1_kyr4r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p75bx"]
+
+[node name="LaserGun" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_dan8w")
+
+[node name="Range" type="CollisionShape2D" parent="."]
+scale = Vector2(12.338, 12.338)
+shape = SubResource("CircleShape2D_p75bx")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="WeaponSprite" type="Sprite2D" parent="WeaponPivot"]
+texture_filter = 1
+position = Vector2(16, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_kyr4r")
+region_enabled = true
+region_rect = Rect2(128, 98, 27, 14)
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/WeaponSprite"]
+position = Vector2(12, 0)

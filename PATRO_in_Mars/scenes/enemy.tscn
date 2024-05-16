@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c77dymgc3sl4t"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_11g44"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lebmv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2ckw"]
+
+[node name="Enemy_1" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 8
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_11g44")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = SubResource("CanvasTexture_lebmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.01147, 2.01147)
+shape = SubResource("CircleShape2D_v2ckw")
