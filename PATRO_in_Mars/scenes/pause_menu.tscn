@@ -68,6 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="continue_btn" type="Button" parent="Menu"]
+process_mode = 3
 texture_filter = 1
 layout_mode = 2
 theme = SubResource("Theme_po2a5")
@@ -75,6 +76,7 @@ text = "CONTINUAR
 "
 
 [node name="get_out_btn" type="Button" parent="Menu"]
+process_mode = 3
 layout_mode = 2
 theme = SubResource("Theme_l4rtm")
 text = "
