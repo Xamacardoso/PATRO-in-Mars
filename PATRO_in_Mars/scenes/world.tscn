@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0mfsfo46hbpb"]
+[gd_scene load_steps=7 format=3 uid="uid://06ok3lyso3bo"]
 
 [ext_resource type="Texture2D" uid="uid://bpkgg555lo5q8" path="res://assets/world/tileset.png" id="1_milmd"]
 [ext_resource type="PackedScene" uid="uid://dpo7e0v52us51" path="res://scenes/player.tscn" id="2_b36kp"]
 [ext_resource type="PackedScene" uid="uid://c77dymgc3sl4t" path="res://scenes/enemy.tscn" id="3_nmy3b"]
+[ext_resource type="PackedScene" uid="uid://b5ws0ev1478r" path="res://scenes/pause_menu.tscn" id="4_kvcbl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1x3b"]
 texture = ExtResource("1_milmd")
@@ -701,3 +702,5 @@ position = Vector2(99, -20)
 
 [node name="Enemy_1" parent="." instance=ExtResource("3_nmy3b")]
 position = Vector2(-138, -158)
+
+[node name="Pause_Menu" parent="." instance=ExtResource("4_kvcbl")]
