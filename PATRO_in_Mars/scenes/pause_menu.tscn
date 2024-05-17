@@ -72,7 +72,7 @@ process_mode = 3
 texture_filter = 1
 layout_mode = 2
 theme = SubResource("Theme_po2a5")
-text = "CONTINUAR
+text = "CONTINUE
 "
 
 [node name="get_out_btn" type="Button" parent="Menu"]
@@ -80,7 +80,7 @@ process_mode = 3
 layout_mode = 2
 theme = SubResource("Theme_l4rtm")
 text = "
-SAIR   
+EXIT
 "
 
 [connection signal="pressed" from="Menu/continue_btn" to="." method="_on_continue_btn_pressed"]
