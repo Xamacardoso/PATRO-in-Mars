@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dx11o25imhigs"]
 
-[ext_resource type="Script" path="res://scripts/Bronze_Element.gd" id="1_gy87u"]
-[ext_resource type="Texture2D" uid="uid://drogpmniyb1nx" path="res://assets/rpg-items-all/bronze bar.png" id="2_xnu8i"]
+[ext_resource type="Script" path="res://scripts/bronze_element.gd" id="1_gy87u"]
+[ext_resource type="Texture2D" uid="uid://drogpmniyb1nx" path="res://assets/resources_and_consumables/resources/bronze bar.png" id="2_xnu8i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_10po6"]
 atlas = ExtResource("2_xnu8i")
@@ -22,6 +22,9 @@ animations = [{
 size = Vector2(11, 12)
 
 [node name="Bronze_Element" type="Area2D"]
+texture_filter = 1
+collision_layer = 16
+collision_mask = 16
 script = ExtResource("1_gy87u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

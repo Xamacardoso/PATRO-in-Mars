@@ -244,8 +244,8 @@ size = Vector2(17, 24)
 light_mask = 17
 visibility_layer = 17
 position = Vector2(0, -1)
-collision_layer = 25
-collision_mask = 17
+collision_layer = 2
+collision_mask = 29
 motion_mode = 1
 script = ExtResource("1_id2h3")
 
@@ -262,7 +262,12 @@ zoom = Vector2(3.5, 3.5)
 [node name="LaserGun" parent="." instance=ExtResource("3_vs3jp")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 17
-visibility_layer = 17
+light_mask = 16
+visibility_layer = 16
 position = Vector2(-1.5, 2)
 shape = SubResource("RectangleShape2D_04s2r")
+
+[node name="BatteryTimer" type="Timer" parent="."]
+wait_time = 70.0
+one_shot = true
+autostart = true

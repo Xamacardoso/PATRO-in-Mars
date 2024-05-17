@@ -1,35 +1,41 @@
 extends Node
 
 
-var items := {
-	"item1":{
-		"name": "item1",
+var resources := {
+	"copper_element":{
+		"name": "Copper Bar",
 		"description": "Preencher descrição do item aqui",
+		"icon": preload("res://assets/resources_and_consumables/resources/copper bar.png"),
 		"amount":0
 	},
-	"item2":{
-		"name": "item2",
+	"bronze_element":{
+		"name": "Bronze Bar",
 		"description": "Preencher descrição do item aqui",
+		"icon": preload("res://assets/resources_and_consumables/resources/bronze bar.png"),
 		"amount":0
 	},
-	"item3":{
-		"name": "item3",
+	"iron_element":{
+		"name": "Iron Bar",
 		"description": "Preencher descrição do item aqui",
+		"icon": preload("res://assets/resources_and_consumables/resources/iron bar.png"),
 		"amount":0
 	},
-	"item4":{
-		"name": "item4",
+	"granite_element":{
+		"name": "Granite Fragment",
 		"description": "Preencher descrição do item aqui",
+		"icon": preload("res://assets/resources_and_consumables/resources/granite.png"),
 		"amount":0
 	},
 	"item5":{
 		"name": "item5",
 		"description": "Preencher descrição do item aqui",
+		"icon": preload("res://assets/resources_and_consumables/resources/copper bar.png"),
 		"amount":0
 	},
 	"item6":{
 		"name": "item6",
 		"description": "Preencher descrição do item aqui",
+		"icon": preload("res://assets/resources_and_consumables/resources/copper bar.png"),
 		"amount":0
 	},
 }

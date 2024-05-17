@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dijaa50o0tivn"]
+[gd_scene load_steps=6 format=3 uid="uid://dijaa50o0tivn"]
 
+[ext_resource type="Script" path="res://scripts/utils/inventory.gd" id="1_8llto"]
 [ext_resource type="Texture2D" uid="uid://0gayff203vlg" path="res://assets/user_interface/Card X3/Card X5.png" id="1_040do"]
 [ext_resource type="Texture2D" uid="uid://ckans5rhnpf7t" path="res://assets/user_interface/Card X1/Card X2.png" id="2_sg52r"]
+[ext_resource type="FontFile" uid="uid://cfs0yuxhvbily" path="res://assets/user_interface/fonts/Warzone.ttf" id="3_iwce5"]
+[ext_resource type="Script" path="res://scripts/utils/resource.gd" id="3_v7ecf"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,8 +13,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8llto")
 
 [node name="InventoryBG" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="InventoryBG"]
 anchors_preset = 15
@@ -22,6 +27,7 @@ grow_vertical = 2
 color = Color(0.0627451, 0.0627451, 0.0627451, 0.572549)
 
 [node name="InventoryHolder" type="TextureRect" parent="."]
+top_level = true
 texture_filter = 5
 layout_mode = 1
 anchors_preset = 15
@@ -81,6 +87,8 @@ custom_minimum_size = Vector2(115, 80)
 layout_mode = 2
 texture = ExtResource("1_040do")
 expand_mode = 2
+script = ExtResource("3_v7ecf")
+my_key = "copper_element"
 
 [node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource1"]
 layout_mode = 1
@@ -94,11 +102,26 @@ offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource1"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 72.5
+offset_top = 52.0
+offset_right = 112.5
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_iwce5")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Resource2" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
 custom_minimum_size = Vector2(115, 80)
 layout_mode = 2
 texture = ExtResource("1_040do")
 expand_mode = 2
+script = ExtResource("3_v7ecf")
+my_key = "bronze_element"
 
 [node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource2"]
 layout_mode = 1
@@ -112,11 +135,26 @@ offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource2"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 72.5
+offset_top = 52.0
+offset_right = 112.5
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_iwce5")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Resource3" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
 custom_minimum_size = Vector2(115, 80)
 layout_mode = 2
 texture = ExtResource("1_040do")
 expand_mode = 2
+script = ExtResource("3_v7ecf")
+my_key = "iron_element"
 
 [node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource3"]
 layout_mode = 1
@@ -130,11 +168,26 @@ offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource3"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 72.5
+offset_top = 52.0
+offset_right = 112.5
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_iwce5")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Resource4" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
 custom_minimum_size = Vector2(115, 80)
 layout_mode = 2
 texture = ExtResource("1_040do")
 expand_mode = 2
+script = ExtResource("3_v7ecf")
+my_key = "granite_element"
 
 [node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource4"]
 layout_mode = 1
@@ -148,11 +201,25 @@ offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource4"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 72.5
+offset_top = 52.0
+offset_right = 112.5
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_iwce5")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Resource5" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
 custom_minimum_size = Vector2(115, 80)
 layout_mode = 2
 texture = ExtResource("1_040do")
 expand_mode = 2
+script = ExtResource("3_v7ecf")
 
 [node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource5"]
 layout_mode = 1
@@ -166,11 +233,25 @@ offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource5"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 72.5
+offset_top = 52.0
+offset_right = 112.5
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_iwce5")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Resource6" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
 custom_minimum_size = Vector2(115, 80)
 layout_mode = 2
 texture = ExtResource("1_040do")
 expand_mode = 2
+script = ExtResource("3_v7ecf")
 
 [node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource6"]
 layout_mode = 1
@@ -183,6 +264,19 @@ offset_right = -30.5
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource6"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 72.5
+offset_top = 52.0
+offset_right = 112.5
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_iwce5")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ConsumablesHolder" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder"]
 custom_minimum_size = Vector2(0, 150)
@@ -227,3 +321,39 @@ layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_sg52r")
 expand_mode = 1
+
+[node name="ResourcesLabel" type="Label" parent="InventoryHolder"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 200.0
+offset_top = 32.0
+offset_right = 291.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("3_iwce5")
+text = "RESOURCES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResourcesLabel2" type="Label" parent="InventoryHolder"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 184.0
+offset_top = 272.0
+offset_right = 316.0
+offset_bottom = 295.0
+theme_override_fonts/font = ExtResource("3_iwce5")
+text = "CONSUMABLES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResourcesLabel3" type="Label" parent="InventoryHolder"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 528.0
+offset_top = 32.0
+offset_right = 732.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("3_iwce5")
+text = "CRAFTING / UPGRADES"
+horizontal_alignment = 1
+vertical_alignment = 1
