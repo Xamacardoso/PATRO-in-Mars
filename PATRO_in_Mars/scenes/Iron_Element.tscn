@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://0ct3b1kabt64"]
 
-[ext_resource type="Script" path="res://scripts/Iron_Element.gd" id="1_gxpu3"]
-[ext_resource type="Texture2D" uid="uid://b0bk5mc5wvanp" path="res://assets/rpg-items-all/iron bar.png" id="1_obhas"]
+[ext_resource type="Script" path="res://scripts/iron_element.gd" id="1_b4ecx"]
+[ext_resource type="Texture2D" uid="uid://b0bk5mc5wvanp" path="res://assets/resources_and_consumables/resources/iron bar.png" id="2_5sjqr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpc52"]
-atlas = ExtResource("1_obhas")
+atlas = ExtResource("2_5sjqr")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4ott"]
@@ -24,9 +24,10 @@ size = Vector2(9.96875, 9.96875)
 [node name="Iron_Element" type="Area2D"]
 light_mask = 17
 visibility_layer = 17
-collision_layer = 25
-collision_mask = 17
-script = ExtResource("1_gxpu3")
+texture_filter = 1
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_b4ecx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -1)

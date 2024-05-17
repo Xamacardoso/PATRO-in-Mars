@@ -5,6 +5,8 @@ class_name Player
 @onready var DAMAGE = 10
 @export var SPEED = 30.0
 
+@onready var resources := Global.resources.duplicate(true)
+@onready var consumables := Global.consumables.duplicate(true)
 
 func _physics_process(_delta):
 	movement()
