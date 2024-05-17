@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c77dymgc3sl4t"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_11g44"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_11g44"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_lebmv"]
 

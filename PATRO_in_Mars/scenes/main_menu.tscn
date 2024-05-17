@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1gn5qpmmtxpx"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_rqsdm"]
-[ext_resource type="Texture2D" uid="uid://q5ym2g12iw2d" path="res://assets/Mars_Space_Planet-Universe_HD_Wallpaper_1366x768.jpg" id="1_tymvm"]
-[ext_resource type="FontFile" uid="uid://cfs0yuxhvbily" path="res://assets/Warzone.ttf" id="3_4bt6m"]
+[ext_resource type="Texture2D" uid="uid://q5ym2g12iw2d" path="res://assets/user_interface/Mars_Space_Planet-Universe_HD_Wallpaper_1366x768.jpg" id="1_tymvm"]
+[ext_resource type="FontFile" uid="uid://cfs0yuxhvbily" path="res://assets/user_interface/fonts/Warzone.ttf" id="3_4bt6m"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -19,14 +19,16 @@ script = ExtResource("1_rqsdm")
 layout_mode = 0
 offset_right = 1366.0
 offset_bottom = 768.0
+scale = Vector2(0.844445, 0.844445)
 texture = ExtResource("1_tymvm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 157.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 18
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
@@ -50,8 +52,8 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_horizontal = 4
+size_flags_vertical = 8
 theme_override_constants/separation = 18
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
