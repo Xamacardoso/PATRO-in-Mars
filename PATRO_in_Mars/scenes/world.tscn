@@ -724,8 +724,9 @@ offset_right = 24.0
 offset_bottom = 16.0
 grow_horizontal = 2
 
-[node name="Control" parent="." instance=ExtResource("6_cdg35")]
-visible = false
+[node name="Control" parent="HUD" instance=ExtResource("6_cdg35")]
+offset_top = -40.0
+offset_bottom = -40.0
 
 [node name="Pause_Menu" parent="." instance=ExtResource("4_kvcbl")]
 visible = false

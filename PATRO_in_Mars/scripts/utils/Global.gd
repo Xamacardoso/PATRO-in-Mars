@@ -44,16 +44,19 @@ var consumables := {
 	"battery":{
 		"name": "Battery",
 		"description": "Preencher descrição do item aqui",
+		"icon": preload("res://assets/resources_and_consumables/consumables/battery.png"),
 		"amount":0
 	},
 	"rudimentar_plating":{
 		"name": "Rudimentar Plating",
 		"description": "Preencher descrição do item aqui",
+		"icon": preload("res://assets/resources_and_consumables/consumables/rudimentar_plating.png"),
 		"amount":0
 	},
 	"flux_overloader":{
 		"name": "Flux Overloader",
 		"description": "Preencher descrição do item aqui",
+		"icon": preload("res://assets/resources_and_consumables/consumables/flux_overloader.png"),
 		"amount":0
 	},
 }

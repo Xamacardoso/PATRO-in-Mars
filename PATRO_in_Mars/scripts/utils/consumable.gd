@@ -1,16 +1,15 @@
 extends TextureRect
+
 @export var my_key := '' 
 @onready var icon_node : TextureRect = get_node("Icon")
 @onready var label_node : Label = get_node("Label")
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	update_properties()
 
 ## Pega o dicionario desse item, se for nulo retorna um dicionario vazio
 func get_item_dict() -> Dictionary:
-	var my_dict = Global.resources.get(my_key) 
+	var my_dict = Global.consumables.get(my_key) 
 	if my_dict == null: return {}
 	return my_dict
 

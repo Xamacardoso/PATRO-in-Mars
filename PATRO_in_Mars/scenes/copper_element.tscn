@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ops2cbjhfg54"]
+[gd_scene load_steps=5 format=3 uid="uid://ops2cbjhfg54"]
 
 [ext_resource type="Script" path="res://scripts/copper_element.gd" id="1_35asv"]
-[ext_resource type="Texture2D" path="res://assets/rpg-items-all/copper bar.png" id="2_rfwiq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1v35r"]
-atlas = ExtResource("2_rfwiq")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mic3f"]
