@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @onready var player_sprite = $PlayerSprite
+@onready var DAMAGE = 10
 @export var SPEED = 30.0
 
 

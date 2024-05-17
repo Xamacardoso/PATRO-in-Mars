@@ -703,4 +703,6 @@ position = Vector2(99, -20)
 [node name="Enemy_1" parent="." instance=ExtResource("3_nmy3b")]
 position = Vector2(-138, -158)
 
-[node name="Pause_Menu" parent="." instance=ExtResource("4_kvcbl")]
+[node name="HUD" parent="." instance=ExtResource("4_kvcbl")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

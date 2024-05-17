@@ -25,4 +25,11 @@ region_enabled = true
 region_rect = Rect2(128, 98, 27, 14)
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/WeaponSprite"]
-position = Vector2(12, 0)
+unique_name_in_owner = true
+position = Vector2(16, -0.5)
+
+[node name="ShootCooldown" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]
