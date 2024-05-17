@@ -1,0 +1,229 @@
+[gd_scene load_steps=3 format=3 uid="uid://dijaa50o0tivn"]
+
+[ext_resource type="Texture2D" uid="uid://0gayff203vlg" path="res://assets/user_interface/Card X3/Card X5.png" id="1_040do"]
+[ext_resource type="Texture2D" uid="uid://ckans5rhnpf7t" path="res://assets/user_interface/Card X1/Card X2.png" id="2_sg52r"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryBG" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="InventoryBG"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0627451, 0.0627451, 0.0627451, 0.572549)
+
+[node name="InventoryHolder" type="TextureRect" parent="."]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 64.0
+offset_right = -160.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_040do")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = 58.0
+offset_right = -48.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="ResourcesItemsHolder" type="VBoxContainer" parent="InventoryHolder/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/separation = 40
+
+[node name="ResourcesHolder" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("1_040do")
+expand_mode = 1
+
+[node name="ResourcesGrid" type="GridContainer" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -82.0
+offset_right = 176.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Resource1" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
+custom_minimum_size = Vector2(115, 80)
+layout_mode = 2
+texture = ExtResource("1_040do")
+expand_mode = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.5
+offset_top = 12.0
+offset_right = -30.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resource2" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
+custom_minimum_size = Vector2(115, 80)
+layout_mode = 2
+texture = ExtResource("1_040do")
+expand_mode = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.5
+offset_top = 12.0
+offset_right = -30.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resource3" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
+custom_minimum_size = Vector2(115, 80)
+layout_mode = 2
+texture = ExtResource("1_040do")
+expand_mode = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.5
+offset_top = 12.0
+offset_right = -30.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resource4" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
+custom_minimum_size = Vector2(115, 80)
+layout_mode = 2
+texture = ExtResource("1_040do")
+expand_mode = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.5
+offset_top = 12.0
+offset_right = -30.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resource5" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
+custom_minimum_size = Vector2(115, 80)
+layout_mode = 2
+texture = ExtResource("1_040do")
+expand_mode = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.5
+offset_top = 12.0
+offset_right = -30.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resource6" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid"]
+custom_minimum_size = Vector2(115, 80)
+layout_mode = 2
+texture = ExtResource("1_040do")
+expand_mode = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.5
+offset_top = 12.0
+offset_right = -30.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConsumablesHolder" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("1_040do")
+expand_mode = 1
+
+[node name="ConsumablesGrid" type="GridContainer" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ConsumablesHolder"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 377.0
+offset_bottom = 136.0
+columns = 3
+
+[node name="Consumable1" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ConsumablesHolder/ConsumablesGrid"]
+custom_minimum_size = Vector2(115, 115)
+layout_mode = 2
+texture = ExtResource("1_040do")
+expand_mode = 2
+
+[node name="Consumable2" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ConsumablesHolder/ConsumablesGrid"]
+custom_minimum_size = Vector2(115, 115)
+layout_mode = 2
+texture = ExtResource("1_040do")
+expand_mode = 2
+
+[node name="Consumable3" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ConsumablesHolder/ConsumablesGrid"]
+custom_minimum_size = Vector2(115, 115)
+layout_mode = 2
+texture = ExtResource("1_040do")
+expand_mode = 2
+
+[node name="CraftingUpgrades" type="VBoxContainer" parent="InventoryHolder/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_sg52r")
+expand_mode = 1
