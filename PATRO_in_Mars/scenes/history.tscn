@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckbvlgbf3t55l"]
+
+[ext_resource type="Texture2D" uid="uid://c03gxqvy5r486" path="res://assets/user_interface/freepik-export-202405182004160S82.jpeg" id="1_plafw"]
+[ext_resource type="Script" path="res://scripts/history.gd" id="1_x0h04"]
+[ext_resource type="FontFile" uid="uid://cfs0yuxhvbily" path="res://assets/user_interface/fonts/Warzone.ttf" id="2_rm2lq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x0h04")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.466181, 0.466181, 0.466181, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -61.0
+offset_right = 9.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_plafw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = 36.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -402.0
+offset_top = 20.0
+offset_right = 348.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_rm2lq")
+theme_override_font_sizes/font_size = 38
+text = "WELCOME TO P.A.T.R.O IN MARS"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 104.0
+offset_right = 1161.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("2_rm2lq")
+theme_override_font_sizes/font_size = 15
+text = "  P.A.T.R.O (Prototyped Automaton for Terrain Recognizement Operations) is a robot that was sent from Earth  
+  aboard a spacecraft on a mission to Mars. Its objective is to collect samples from the Martian surface and 
+  explore the terrain features present on the red planet.Upon landing, P.A.T.R.O’s spacecraft is severely damaged,
+  and the robot must gather resources to survive and repair its ship as quickly as possible. However,hostile 
+  enemies inhabit the area, seeking to eliminate any intruders.
+"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 547.0
+offset_right = 678.0
+offset_bottom = 578.0
+theme_override_fonts/font = ExtResource("2_rm2lq")
+theme_override_font_sizes/font_size = 17
+text = "BACK"

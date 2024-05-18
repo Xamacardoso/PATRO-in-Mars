@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://06ok3lyso3bo"]
+[gd_scene load_steps=17 format=3 uid="uid://06ok3lyso3bo"]
 
 [ext_resource type="Texture2D" uid="uid://bpkgg555lo5q8" path="res://assets/world/tileset.png" id="1_milmd"]
 [ext_resource type="PackedScene" uid="uid://dpo7e0v52us51" path="res://scenes/player.tscn" id="2_b36kp"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dijaa50o0tivn" path="res://scenes/utils/inventory.tscn" id="6_cdg35"]
 [ext_resource type="Texture2D" uid="uid://dfs4wlb88o7mk" path="res://assets/resources_and_consumables/consumables/battery.png" id="7_x32tk"]
 [ext_resource type="Texture2D" uid="uid://d4ne8ah71op7k" path="res://assets/user_interface/Health UI.png" id="8_alr0b"]
+[ext_resource type="PackedScene" uid="uid://dfii3t8kwq86y" path="res://scenes/deposit_box.tscn" id="10_t2x2y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1x3b"]
 texture = ExtResource("1_milmd")
@@ -804,3 +805,6 @@ sprite_frames = SubResource("SpriteFrames_hqk35")
 
 [node name="Pause_Menu" parent="." instance=ExtResource("4_kvcbl")]
 visible = false
+
+[node name="deposit-box" parent="." instance=ExtResource("10_t2x2y")]
+position = Vector2(-31, 22)
