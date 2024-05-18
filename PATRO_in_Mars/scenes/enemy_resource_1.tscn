@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://drqf41lhaybad"]
+
+[ext_resource type="Script" path="res://scripts/enemy_resource.gd" id="1_4ehr7"]
+[ext_resource type="Texture2D" uid="uid://digmhpjn3oqlc" path="res://assets/resources_and_consumables/resources/shard_01c.png" id="2_jieso"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ugd4o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jieso")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhspb"]
+size = Vector2(3, 3)
+
+[node name="Enemy_Resource" type="Area2D"]
+light_mask = 17
+visibility_layer = 17
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_4ehr7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.1875, 0.1875)
+sprite_frames = SubResource("SpriteFrames_ugd4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qhspb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
