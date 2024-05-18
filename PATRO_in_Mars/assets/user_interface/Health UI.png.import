@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4ito47daq7fg"
-path="res://.godot/imported/hematite.png-e9e85a1c6d96ef009b2a799255cec00a.ctex"
+uid="uid://d4ne8ah71op7k"
+path="res://.godot/imported/Health UI.png-16f283d14aee2e29df1239a57c9fe6af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resources_and_consumables/resources/hematite.png"
-dest_files=["res://.godot/imported/hematite.png-e9e85a1c6d96ef009b2a799255cec00a.ctex"]
+source_file="res://assets/user_interface/Health UI.png"
+dest_files=["res://.godot/imported/Health UI.png-16f283d14aee2e29df1239a57c9fe6af.ctex"]
 
 [params]
 

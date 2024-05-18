@@ -40,3 +40,11 @@ func play_animation(movementvector) -> void:
 		player_sprite.play("idle")
 		
 	
+#Stats do Player
+var health := 100
+var max_health := 100
+var health_recovery := 1
+var battery := 100
+var battery_health := 100
+
+signal player_stats_changed()

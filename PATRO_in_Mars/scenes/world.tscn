@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://06ok3lyso3bo"]
 
 [ext_resource type="Texture2D" uid="uid://bpkgg555lo5q8" path="res://assets/world/tileset.png" id="1_milmd"]
 [ext_resource type="PackedScene" uid="uid://dpo7e0v52us51" path="res://scenes/player.tscn" id="2_b36kp"]
 [ext_resource type="PackedScene" uid="uid://c77dymgc3sl4t" path="res://scenes/enemy.tscn" id="3_nmy3b"]
+
 [ext_resource type="PackedScene" uid="uid://b5ws0ev1478r" path="res://scenes/pause_menu.tscn" id="4_kvcbl"]
 [ext_resource type="PackedScene" uid="uid://d3f1um6fdvvmw" path="res://scenes/utils/stopwatch.tscn" id="5_dpdot"]
 [ext_resource type="PackedScene" uid="uid://dijaa50o0tivn" path="res://scenes/utils/inventory.tscn" id="6_cdg35"]
+[ext_resource type="Texture2D" uid="uid://dfs4wlb88o7mk" path="res://assets/resources_and_consumables/consumables/battery.png" id="7_x32tk"]
+[ext_resource type="Texture2D" uid="uid://d4ne8ah71op7k" path="res://assets/user_interface/Health UI.png" id="8_alr0b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1x3b"]
 texture = ExtResource("1_milmd")
@@ -692,6 +694,36 @@ physics_layer_0/collision_mask = 0
 physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_s1x3b")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmrjl"]
+atlas = ExtResource("8_alr0b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ld2gj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmrjl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq4rq"]
+atlas = ExtResource("7_x32tk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqk35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq4rq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -724,6 +756,48 @@ grow_horizontal = 2
 [node name="Control" parent="HUD" instance=ExtResource("6_cdg35")]
 offset_top = -40.0
 offset_bottom = -40.0
+
+[node name="Health" type="ColorRect" parent="HUD"]
+offset_left = 17.0
+offset_top = 37.0
+offset_right = 119.0
+offset_bottom = 59.0
+color = Color(0, 0, 0, 0.509804)
+
+[node name="bar" type="ColorRect" parent="HUD/Health"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 101.0
+offset_bottom = 21.0
+color = Color(0.623529, 0.00392157, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HUD/Health"]
+texture_filter = 1
+position = Vector2(3, 11)
+scale = Vector2(0.761719, 0.859375)
+sprite_frames = SubResource("SpriteFrames_ld2gj")
+
+[node name="Baterry" type="ColorRect" parent="HUD"]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 118.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 0.509804)
+
+[node name="bar" type="ColorRect" parent="HUD/Baterry"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 101.0
+offset_bottom = 21.0
+color = Color(0.101956, 0.501277, 0.899509, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HUD/Baterry"]
+texture_filter = 1
+position = Vector2(3, 12)
+scale = Vector2(0.648437, 0.859375)
+sprite_frames = SubResource("SpriteFrames_hqk35")
 
 [node name="Pause_Menu" parent="." instance=ExtResource("4_kvcbl")]
 visible = false
