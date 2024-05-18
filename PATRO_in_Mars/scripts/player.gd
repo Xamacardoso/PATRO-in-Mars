@@ -41,10 +41,10 @@ func play_animation(movementvector) -> void:
 		
 	
 #Stats do Player
-var health := 100
-var max_health := 100
-var health_recovery := 1
-var battery := 100
-var battery_health := 100
+var health = 100.0
+var max_health = 100.0
+var health_recovery = 1.0
+var battery = 100.0
+var battery_health = 100.0
 
 signal player_stats_changed()
