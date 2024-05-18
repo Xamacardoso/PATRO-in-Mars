@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://davcng50jqcrn"]
 
-[ext_resource type="Script" path="res://scripts/granito_element.gd" id="1_4j1wf"]
-[ext_resource type="Texture2D" uid="uid://b4aa4vn0ttk25" path="res://assets/resources_and_consumables/resources/granite.png" id="2_is243"]
+[ext_resource type="Script" path="res://scripts/granito_element.gd" id="1_6jo5y"]
+[ext_resource type="Texture2D" uid="uid://irc1afup8epp" path="res://assets/resources_and_consumables/resources/granite.png" id="2_33ptp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fadbm"]
-atlas = ExtResource("2_is243")
+atlas = ExtResource("2_33ptp")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3ny7t"]
@@ -24,7 +24,7 @@ size = Vector2(14, 17)
 [node name="Granit_Element" type="Area2D"]
 collision_layer = 16
 collision_mask = 16
-script = ExtResource("1_4j1wf")
+script = ExtResource("1_6jo5y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3.125, 2.75)
