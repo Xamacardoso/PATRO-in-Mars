@@ -1,7 +1,7 @@
 extends Control
 
 @onready var back_button = $Button as Button
-@export var main_menu_level = preload("res://scenes/main_menu.tscn") as PackedScene
+
 
 
 func _ready():
@@ -9,7 +9,7 @@ func _ready():
 	
 	
 func on_main_menu_pressed() -> void:
-	get_tree().change_scene_to_packed(main_menu_level)
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
 
 	
