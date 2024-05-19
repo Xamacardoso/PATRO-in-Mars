@@ -6,7 +6,7 @@ const resource_instance = preload("res://scenes/resource_rigid.tscn")
 @onready var animation_player = $AnimationPlayer  as AnimationPlayer
 @onready var spawn_resource = $"spawn-resource" as Marker2D
 @export var pieces : PackedStringArray
-@export var hitpoints = 2
+@export var hp = 2
 var impulse = 50
 
 #Verificando varredura do array e instanciando pedaços

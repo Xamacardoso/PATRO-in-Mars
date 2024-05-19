@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://06ok3lyso3bo"]
+[gd_scene load_steps=16 format=3 uid="uid://06ok3lyso3bo"]
 
 [ext_resource type="Texture2D" uid="uid://bpkgg555lo5q8" path="res://assets/world/tileset.png" id="1_milmd"]
 [ext_resource type="PackedScene" uid="uid://dpo7e0v52us51" path="res://scenes/player.tscn" id="2_b36kp"]
 [ext_resource type="PackedScene" uid="uid://c77dymgc3sl4t" path="res://scenes/enemy.tscn" id="3_nmy3b"]
-[ext_resource type="PackedScene" uid="uid://ops2cbjhfg54" path="res://scenes/copper_resource.tscn" id="4_45qlt"]
 [ext_resource type="PackedScene" uid="uid://b5ws0ev1478r" path="res://scenes/pause_menu.tscn" id="4_kvcbl"]
 [ext_resource type="PackedScene" uid="uid://d3f1um6fdvvmw" path="res://scenes/utils/stopwatch.tscn" id="5_dpdot"]
 [ext_resource type="PackedScene" uid="uid://dijaa50o0tivn" path="res://scenes/utils/inventory.tscn" id="6_cdg35"]
@@ -740,9 +739,6 @@ position = Vector2(99, -20)
 position = Vector2(-138, -158)
 
 [node name="Pickups" type="Node" parent="."]
-
-[node name="Copperr_Element" parent="Pickups" instance=ExtResource("4_45qlt")]
-position = Vector2(-56, -32)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 offset = Vector2(0, 40)

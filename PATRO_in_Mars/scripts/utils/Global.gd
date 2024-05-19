@@ -1,5 +1,6 @@
 extends Node
 
+@onready var can_pause = true
 
 var resources := {
 	"copper_element":{

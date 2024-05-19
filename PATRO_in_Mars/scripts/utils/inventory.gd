@@ -7,5 +7,6 @@ func _ready():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("inventory"):
+		Global.can_pause = !Global.can_pause
 		visible = !visible
 		get_tree().paused = visible
