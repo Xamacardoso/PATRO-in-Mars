@@ -12,7 +12,6 @@ var impulse = 50
 
 
 func _process(_delta) -> void:
-	print(hp)
 	if hp <= 0:
 		queue_free()
 

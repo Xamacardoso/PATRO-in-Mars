@@ -1,9 +1,18 @@
 extends Area2D
 @onready var gun_sprite = $WeaponPivot/WeaponSprite
+@onready var player = get_parent()
+@onready var player_damage = player.get("DAMAGE")
+var DAMAGE = 0.0
+
+func _ready() -> void:
+	print("Laser Gun pega o dano do player, que é o : ", player)
+	DAMAGE = player.DAMAGE
+	print("LaserGun nasceu com dano : ", DAMAGE)
 
 ## Calcula quantos inimigos tem em volta e olha pro mais próximo
 func _physics_process(_delta):
-	var targets_in_range = get_overlapping_bodies()
+	#print("MEU DANO E O DANO DO PLAYER: ", DAMAGE)
+	var targets_in_range = get_overlapping_areas()
 	if targets_in_range.size() > 0:
 		var target = targets_in_range.front()
 		look_at(target.global_position)
