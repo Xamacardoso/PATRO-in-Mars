@@ -11,8 +11,8 @@ height = 73.3333
 [node name="Bullet" type="Area2D"]
 top_level = true
 scale = Vector2(0.3, 0.3)
-collision_layer = 9
-collision_mask = 9
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_ib0lh")
 BULLET_SPEED = 500.0
 
@@ -37,5 +37,6 @@ scale = Vector2(1.21116, 0.631152)
 shape = SubResource("CapsuleShape2D_uuw01")
 
 [connection signal="screen_exited" from="BulletScreenNotifier" to="." method="_on_bullet_screen_notifier_screen_exited"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 
 [editable path="HitBox"]

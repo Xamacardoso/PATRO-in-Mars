@@ -28,6 +28,7 @@ var energy = 70
 
 func _physics_process(_delta):
 	movement()
+	Global.damage_holder = DAMAGE
 	
 ## Handles player movement
 func movement() -> void:
