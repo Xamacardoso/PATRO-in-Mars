@@ -23,22 +23,22 @@ var resources := {
 		"icon": preload("res://assets/resources_and_consumables/resources/iron bar.png"),
 		"amount":0
 	},
-	"granite_element":{
-		"name": "Granite Fragment",
+	"hematite_element":{
+		"name": "Pure Hematite Fragment",
 		"description": "Preencher descrição do item aqui",
-		"icon": preload("res://assets/resources_and_consumables/resources/granite.png"),
+		"icon": preload("res://assets/resources_and_consumables/resources/hematite.png"),
 		"amount":0
 	},
-	"item5":{
-		"name": "item5",
+	"blue_shard":{
+		"name": "Blue Martian Shard",
 		"description": "Preencher descrição do item aqui",
-		"icon": preload("res://assets/resources_and_consumables/resources/copper bar.png"),
+		"icon": preload("res://assets/resources_and_consumables/resources/shard_01c.png"),
 		"amount":0
 	},
-	"item6":{
-		"name": "item6",
+	"dark_shard":{
+		"name": "Dark Martian Matter",
 		"description": "Preencher descrição do item aqui",
-		"icon": preload("res://assets/resources_and_consumables/resources/copper bar.png"),
+		"icon": preload("res://assets/resources_and_consumables/resources/shard_01i.png"),
 		"amount":0
 	},
 }
@@ -72,6 +72,7 @@ var main_scenes := {
 	"main_menu" : preload("res://scenes/main_menu.tscn")
 }
 
+# gambiarra do dano da bala
 var damage_holder = 0
 
 ## Função que transiciona as cenas

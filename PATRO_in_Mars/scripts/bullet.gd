@@ -10,7 +10,7 @@ var DAMAGE = Global.damage_holder
 
 func _ready() -> void: 
 	player_damage = player.DAMAGE
-	print("EU sou a bala e estou obtendo o dano do player: ", player, " e o seu dano é ", player_damage, ". MEU DANO É ", DAMAGE)
+	#print("EU sou a bala e estou obtendo o dano do player: ", player, " e o seu dano é ", player_damage, ". MEU DANO É ", DAMAGE)
 
 ## Processa a direção e movimento da bala
 func _physics_process(delta):

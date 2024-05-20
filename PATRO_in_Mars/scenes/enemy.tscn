@@ -40,8 +40,8 @@ scale = Vector2(1.97242, 1.97242)
 shape = SubResource("RectangleShape2D_cftpr")
 
 [node name="HitBox" parent="." instance=ExtResource("3_1fk3w")]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 scale = Vector2(1.59452, 1.59452)

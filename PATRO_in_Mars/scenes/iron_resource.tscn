@@ -20,7 +20,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0d06r"]
 size = Vector2(9.96875, 9.96875)
 
-[node name="Iron_Element" type="Area2D"]
+[node name="IronResource" type="Area2D"]
 light_mask = 17
 visibility_layer = 17
 texture_filter = 1
@@ -28,13 +28,11 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -1)
 scale = Vector2(0.15625, 0.164062)
 sprite_frames = SubResource("SpriteFrames_c4ott")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.984375, -0.984375)
 shape = SubResource("RectangleShape2D_0d06r")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
