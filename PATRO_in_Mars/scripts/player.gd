@@ -1,18 +1,19 @@
 extends CharacterBody2D
 class_name Player
 
+
 @onready var player_sprite = $PlayerSprite
 @onready var DAMAGE = 10.0
 @export var SPEED = 30.0
 
 @onready var label_battery = $Label
 
-
-
+# Inventário do player
 @onready var resources := Global.resources.duplicate(true)
 @onready var consumables := Global.consumables.duplicate(true)
 
 @onready var BatteryTimer = $BatteryTimer
+
 
 func _physics_process(_delta):
 	movement()
@@ -28,7 +29,7 @@ func movement() -> void:
 	play_animation(movementvector)
 	move_and_slide()
 
-
+## Animações do player
 func play_animation(movementvector) -> void:
 	if movementvector:
 		if movementvector.x:
@@ -46,13 +47,11 @@ func play_animation(movementvector) -> void:
 		player_sprite.play("idle")
 		
 	
-#Stats do Player
+# Stats do Player
 var health = 100.0
 var max_health = 100.0
 var health_recovery = 1.0
-var battery = 100.0
-var battery_health = 100.0
-var energy = 100
+var energy = 70
 var energy_timer = BatteryTimer
 
 signal player_stats_changed()
@@ -64,8 +63,8 @@ func _on_battery_timer_ready():
 	energy_timer.connect(energy_timer, _on_battery_timer_timeout())
 	energy_timer.start()
 
-## Diminui a bateria em 1 a cada tick
+## Diminui a bateria em 1 a cada segundo
 func _on_battery_timer_timeout():
 	energy -= 1
-	if energy == 90: game_over()
+	if energy == 0: game_over()
 	label_battery.text = str(energy)

@@ -273,6 +273,5 @@ autostart = true
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "100"
 
 [connection signal="timeout" from="BatteryTimer" to="." method="_on_battery_timer_timeout"]
