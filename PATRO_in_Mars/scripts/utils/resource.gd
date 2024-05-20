@@ -22,5 +22,5 @@ func update_properties() -> void:
 	label_node.text = str(my_dict["amount"])
 
 
-func _process(delta):
+func _process(_delta):
 	modulate.a = 0.31 if get_item_dict().get("amount") == 0 else 1.0

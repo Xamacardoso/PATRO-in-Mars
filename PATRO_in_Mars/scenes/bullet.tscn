@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtm2fjhrdu5xg"]
+[gd_scene load_steps=5 format=3 uid="uid://dtm2fjhrdu5xg"]
 
 [ext_resource type="Texture2D" uid="uid://dhcwdvps8de6j" path="res://assets/weapons/bullet/laserbullet.png" id="1_hx3ap"]
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_ib0lh"]
+[ext_resource type="PackedScene" uid="uid://dlyx4yo8ytxlx" path="res://scenes/utils/hit_box.tscn" id="3_og0eh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_273lg"]
-size = Vector2(73, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uuw01"]
+radius = 6.66667
+height = 73.3333
 
 [node name="Bullet" type="Area2D"]
 top_level = true
 scale = Vector2(0.3, 0.3)
-collision_layer = 0
+collision_layer = 9
 collision_mask = 9
 script = ExtResource("1_ib0lh")
 BULLET_SPEED = 500.0
@@ -19,12 +21,21 @@ texture_filter = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_hx3ap")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_273lg")
-
 [node name="BulletScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-10, -1.19209e-07)
 scale = Vector2(0.666667, 0.666667)
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="HitBox" parent="." instance=ExtResource("3_og0eh")]
+modulate = Color(1, 0, 0, 1)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(13.3333, 0)
+rotation = -1.5708
+scale = Vector2(1.21116, 0.631152)
+shape = SubResource("CapsuleShape2D_uuw01")
+
 [connection signal="screen_exited" from="BulletScreenNotifier" to="." method="_on_bullet_screen_notifier_screen_exited"]
+
+[editable path="HitBox"]
