@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ct3b1kabt64"]
+[gd_scene load_steps=5 format=3 uid="uid://b1grdd5y45ymq"]
 
-[ext_resource type="Script" path="res://scripts/iron_element.gd" id="1_lgdee"]
 [ext_resource type="Texture2D" uid="uid://dc3vlnjfgycwr" path="res://assets/resources_and_consumables/resources/iron bar.png" id="2_wg8hv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpc52"]
@@ -27,7 +26,6 @@ visibility_layer = 17
 texture_filter = 1
 collision_layer = 16
 collision_mask = 16
-script = ExtResource("1_lgdee")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -1)

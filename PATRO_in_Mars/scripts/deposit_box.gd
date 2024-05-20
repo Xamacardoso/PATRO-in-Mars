@@ -9,6 +9,8 @@ const resource_instance = preload("res://scenes/resource_rigid.tscn")
 @export var hp = 2
 var impulse = 50
 
+
+
 func _process(_delta) -> void:
 	print(hp)
 	if hp <= 0:
