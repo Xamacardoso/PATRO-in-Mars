@@ -72,6 +72,8 @@ var main_scenes := {
 	"main_menu" : preload("res://scenes/main_menu.tscn")
 }
 
+var damage_holder = 0
+
 ## Função que transiciona as cenas
 func transition_to_scene(destiny_scene: String) -> void:
 	var trans = transition_scene.instantiate()

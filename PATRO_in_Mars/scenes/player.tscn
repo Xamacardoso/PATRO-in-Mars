@@ -289,6 +289,7 @@ scale = Vector2(0.755035, 0.755035)
 shape = SubResource("CapsuleShape2D_kakca")
 
 [connection signal="timeout" from="BatteryTimer" to="." method="_on_battery_timer_timeout"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 
 [editable path="HurtBox"]
