@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6nq3tjl0f5xn"]
+
+[ext_resource type="Texture2D" uid="uid://33pit8i2k6lt" path="res://assets/Nairan - Battlecruiser  -  Destruction.png" id="1_ro261"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5s70"]
+atlas = ExtResource("1_ro261")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_450lh"]
+atlas = ExtResource("1_ro261")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buxxm"]
+atlas = ExtResource("1_ro261")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekq6b"]
+atlas = ExtResource("1_ro261")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2eoo"]
+atlas = ExtResource("1_ro261")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oivf"]
+atlas = ExtResource("1_ro261")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxhx6"]
+atlas = ExtResource("1_ro261")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix1hf"]
+atlas = ExtResource("1_ro261")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84bbm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5s70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_450lh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buxxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekq6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2eoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oivf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxhx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix1hf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppgkl"]
+size = Vector2(64, 92)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 19
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_84bbm")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_ppgkl")
