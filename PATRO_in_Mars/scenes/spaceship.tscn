@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6nq3tjl0f5xn"]
+[gd_scene load_steps=7 format=3 uid="uid://b6nq3tjl0f5xn"]
 
 [ext_resource type="Texture2D" uid="uid://bodr6mre1uoot" path="res://assets/Nairan - Bomber - Base.png" id="1_aelb5"]
+[ext_resource type="PackedScene" uid="uid://paq6ku5etsqo" path="res://scenes/utils/hurt_box.tscn" id="2_mulur"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vqqwx"]
 atlas = ExtResource("1_aelb5")
@@ -19,6 +20,9 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dp52"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_068n7"]
+size = Vector2(20.287, 23.7393)
+
 [node name="Ship" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 11
@@ -33,3 +37,14 @@ autoplay = "broken"
 position = Vector2(0, 1)
 scale = Vector2(0.94683, 0.94683)
 shape = SubResource("CapsuleShape2D_3dp52")
+
+[node name="HurtBox" parent="." instance=ExtResource("2_mulur")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2(0.18137, 1)
+scale = Vector2(1.26373, 1.26373)
+shape = SubResource("RectangleShape2D_068n7")
+
+[editable path="HurtBox"]

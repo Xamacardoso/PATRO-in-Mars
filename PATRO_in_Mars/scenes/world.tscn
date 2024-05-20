@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://06ok3lyso3bo"]
+[gd_scene load_steps=13 format=3 uid="uid://06ok3lyso3bo"]
 
 [ext_resource type="Texture2D" uid="uid://bpkgg555lo5q8" path="res://assets/world/tileset.png" id="1_milmd"]
 [ext_resource type="PackedScene" uid="uid://dpo7e0v52us51" path="res://scenes/player.tscn" id="2_b36kp"]
@@ -9,12 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dijaa50o0tivn" path="res://scenes/utils/inventory.tscn" id="6_cdg35"]
 [ext_resource type="Texture2D" uid="uid://dfs4wlb88o7mk" path="res://assets/resources_and_consumables/consumables/battery.png" id="7_x32tk"]
 [ext_resource type="PackedScene" uid="uid://bw4nabip3flfc" path="res://scenes/utils/fade_out_transition.tscn" id="10_h4c3i"]
-<<<<<<< menu_game_over
-[ext_resource type="PackedScene" path="res://scenes/deposit_box.tscn" id="10_t2x2y"]
-=======
-[ext_resource type="PackedScene" uid="uid://dfii3t8kwq86y" path="res://scenes/deposit_box.tscn" id="10_t2x2y"]
 [ext_resource type="PackedScene" uid="uid://b6nq3tjl0f5xn" path="res://scenes/spaceship.tscn" id="11_0l0m3"]
->>>>>>> main
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1x3b"]
 texture = ExtResource("1_milmd")
@@ -711,7 +706,9 @@ layer_0/tile_data = PackedInt32Array(-720913, 589824, 6, -655377, 589824, 6, -58
 [node name="Player" parent="." instance=ExtResource("2_b36kp")]
 position = Vector2(99, -20)
 
-[node name="Enemy_1" parent="." instance=ExtResource("3_nmy3b")]
+[node name="Node" type="Node" parent="."]
+
+[node name="Enemy_1" parent="Node" instance=ExtResource("3_nmy3b")]
 position = Vector2(-138, -158)
 
 [node name="Pickups" type="Node" parent="."]
@@ -779,10 +776,6 @@ texture = ExtResource("7_x32tk")
 
 [node name="Pause_Menu" parent="." instance=ExtResource("4_kvcbl")]
 visible = false
-
-[node name="deposit-box" parent="." instance=ExtResource("10_t2x2y")]
-position = Vector2(-31, 22)
-collision_layer = 1
 
 [node name="FadeOutTransition" parent="." instance=ExtResource("10_h4c3i")]
 visible = false

@@ -1,38 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://davcng50jqcrn"]
+[gd_scene load_steps=5 format=3 uid="uid://cua8ay02axs4s"]
 
-[ext_resource type="Script" path="res://scripts/granito_element.gd" id="1_6jo5y"]
-[ext_resource type="Texture2D" uid="uid://irc1afup8epp" path="res://assets/resources_and_consumables/resources/granite.png" id="2_33ptp"]
+[ext_resource type="Texture2D" uid="uid://c4ito47daq7fg" path="res://assets/resources_and_consumables/resources/hematite.png" id="1_juca1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fadbm"]
-atlas = ExtResource("2_33ptp")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w1ad"]
+atlas = ExtResource("1_juca1")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3ny7t"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4ott"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fadbm")
+"texture": SubResource("AtlasTexture_4w1ad")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kxa4"]
-size = Vector2(14, 17)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0d06r"]
+size = Vector2(9.96875, 9.96875)
 
-[node name="Granit_Element" type="Area2D"]
+[node name="GraniteResource" type="Area2D"]
+light_mask = 17
+visibility_layer = 17
+texture_filter = 1
 collision_layer = 16
 collision_mask = 16
-script = ExtResource("1_6jo5y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3.125, 2.75)
-scale = Vector2(0.160156, 0.179688)
-sprite_frames = SubResource("SpriteFrames_3ny7t")
+scale = Vector2(0.15625, 0.164062)
+sprite_frames = SubResource("SpriteFrames_c4ott")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 3)
-shape = SubResource("RectangleShape2D_7kxa4")
+shape = SubResource("RectangleShape2D_0d06r")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,7 +5,7 @@ class_name Player
 @onready var player_sprite = $PlayerSprite
 
 @onready var label_battery = $Label
-@onready var battery_timer = $BatteryTimer
+@onready var battery_timer : Timer = $BatteryTimer
 
 # Inventário do player
 @onready var resources := Global.resources.duplicate(true)
@@ -20,10 +20,12 @@ func _ready() -> void:
 var hp = 100.0
 var max_health = 100.0
 var health_recovery = 1.0
-var energy = 70
+var max_energy = 10.0
+var energy = max_energy
 @export var DAMAGE = 10.0
 @export var SPEED = 30.0
 
+@onready var batteries = consumables["battery"]["amount"]
 
 
 func _physics_process(_delta):
@@ -62,12 +64,31 @@ func play_animation(movementvector) -> void:
 func game_over() -> void:
 	queue_free()
 
+signal add_item
+
+func _unhandled_input(event):
+	if event.is_action_pressed("debug_additem"):
+		resources["dark_shard"]["amount"] += 1
+		print(resources["dark_shard"]["amount"])
+	elif event.is_action_pressed("debug_addbattery"):
+		consumables["battery"]["amount"] += 1
+		batteries = consumables["battery"]["amount"]
+		print("Meu inventario tem isso de baterias: " ,consumables["battery"]["amount"])
+		print("Eu tenho essa quantidade de baterias: " , batteries)
 
 ## Diminui a bateria em 1 a cada segundo
 func _on_battery_timer_timeout():
 	energy -= 1
-	if energy == 60:
-		battery_timer.start()
+	if energy == 0:
+		if batteries >= 1:
+			energy = max_energy
+			consumables["battery"]["amount"] -= 1
+			batteries = consumables["battery"]["amount"]
+			print(batteries)
+		else:
+			breakpoint
+			
+	battery_timer.start()
 	label_battery.text = str(energy)
 
 ## Tomar hits

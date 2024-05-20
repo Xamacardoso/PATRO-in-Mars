@@ -10,7 +10,7 @@ signal hurt(DAMAGE)
 
 
 func _on_area_entered(area):
-	print(area, " entrou em mim e o dano dela é ", area.DAMAGE )
+	print(area, " entrou em mim e o dano dela é ", area.DAMAGE)
 	if area.get("DAMAGE") != null:
 		match HurtBoxType:
 			0: # Cooldown

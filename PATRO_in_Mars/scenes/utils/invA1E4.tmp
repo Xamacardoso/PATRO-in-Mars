@@ -188,7 +188,7 @@ layout_mode = 2
 texture = ExtResource("1_040do")
 expand_mode = 2
 script = ExtResource("3_v7ecf")
-my_key = "hematite_element"
+my_key = "granite_element"
 
 [node name="Icon" type="TextureRect" parent="InventoryHolder/HBoxContainer/ResourcesItemsHolder/ResourcesHolder/ResourcesGrid/Resource4"]
 layout_mode = 1
