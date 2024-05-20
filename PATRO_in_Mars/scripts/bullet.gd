@@ -17,11 +17,13 @@ func _on_bullet_screen_notifier_screen_exited():
 
 
 ## Hit da bala
-func _on_area_entered(area):
-	area.hp -= DAMAGE
-	
-	if area.hp < 0:
-		area.break_sprite()
-	else:
-		area.animation_player.play("hit")
-		area.create_resource() #chamando nossa função para surgimento do recurso
+func _on_body_entered(body):
+	body.hp -= DAMAGE
+	if body.has_method("break_sprite"):
+		if body.hp < 0:
+			body.break_sprite()
+			print("Fim")
+		else:
+			body.animation_player.play("hit")
+			body.create_resource() #chamando nossa função para surgimento do recurso
+
