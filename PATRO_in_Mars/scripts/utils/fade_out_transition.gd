@@ -6,7 +6,7 @@ var progress : float = 1.0
 func _ready():
 	visible = true
 
-func _process(delta):
+func _process(_delta):
 	progress = move_toward(progress, 0.0, 0.0015)
 	color_rect.color.a = progress
 	if progress <= 0.0:

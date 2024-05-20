@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://06ok3lyso3bo"]
+[gd_scene load_steps=14 format=3 uid="uid://06ok3lyso3bo"]
 
 [ext_resource type="Texture2D" uid="uid://bpkgg555lo5q8" path="res://assets/world/tileset.png" id="1_milmd"]
 [ext_resource type="PackedScene" uid="uid://dpo7e0v52us51" path="res://scenes/player.tscn" id="2_b36kp"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dfs4wlb88o7mk" path="res://assets/resources_and_consumables/consumables/battery.png" id="7_x32tk"]
 [ext_resource type="PackedScene" uid="uid://bw4nabip3flfc" path="res://scenes/utils/fade_out_transition.tscn" id="10_h4c3i"]
 [ext_resource type="PackedScene" uid="uid://dfii3t8kwq86y" path="res://scenes/deposit_box.tscn" id="10_t2x2y"]
+[ext_resource type="PackedScene" uid="uid://b6nq3tjl0f5xn" path="res://scenes/spaceship.tscn" id="11_0l0m3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1x3b"]
 texture = ExtResource("1_milmd")
@@ -781,3 +782,6 @@ collision_layer = 1
 
 [node name="FadeOutTransition" parent="." instance=ExtResource("10_h4c3i")]
 visible = false
+
+[node name="Ship" parent="." instance=ExtResource("11_0l0m3")]
+position = Vector2(10, -18)
