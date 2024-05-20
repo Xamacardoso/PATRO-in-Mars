@@ -1,7 +1,9 @@
 extends Node
 
 @onready var can_pause = true
+@onready var transition_scene : PackedScene = preload("res://scenes/utils/fade_in_transition.tscn")
 
+## Database de itens
 var resources := {
 	"copper_element":{
 		"name": "Copper Bar",
@@ -41,6 +43,7 @@ var resources := {
 	},
 }
 
+## Database de consumiveis
 var consumables := {
 	"battery":{
 		"name": "Battery",
@@ -61,3 +64,17 @@ var consumables := {
 		"amount":0
 	},
 }
+
+## Cenas principais
+var main_scenes := {
+	"game" : preload("res://scenes/world.tscn"),
+	"history" : preload("res://scenes/history.tscn"),
+	"main_menu" : preload("res://scenes/main_menu.tscn")
+}
+
+## Função que transiciona as cenas
+func transition_to_scene(destiny_scene: String) -> void:
+	var trans = transition_scene.instantiate()
+	trans.destiny_scene = destiny_scene
+	add_child(trans)
+	
