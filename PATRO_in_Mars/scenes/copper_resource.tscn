@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ops2cbjhfg54"]
+[gd_scene load_steps=6 format=3 uid="uid://ops2cbjhfg54"]
 
 [ext_resource type="Script" path="res://scripts/copper_element.gd" id="1_35asv"]
+[ext_resource type="Texture2D" uid="uid://b1h1o4ujtm4t0" path="res://assets/resources_and_consumables/resources/copper bar.png" id="2_bywsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1v35r"]
 region = Rect2(0, 0, 64, 64)
@@ -8,6 +9,9 @@ region = Rect2(0, 0, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_mic3f"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bywsp")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1v35r")
 }],
@@ -17,6 +21,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3on8i"]
+size = Vector2(7.5, 7.5)
 
 [node name="CopperResource" type="Area2D"]
 texture_filter = 1
@@ -25,11 +30,12 @@ collision_mask = 18
 script = ExtResource("1_35asv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -2)
-scale = Vector2(0.1875, 0.1875)
+position = Vector2(1, 0)
+scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_mic3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.75, 0.25)
 shape = SubResource("RectangleShape2D_3on8i")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

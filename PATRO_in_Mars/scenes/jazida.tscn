@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj71guejejl6"]
+
+[ext_resource type="Script" path="res://scripts/jazida.gd" id="1_xk4bo"]
+[ext_resource type="Texture2D" uid="uid://b8pm7au3xrbm3" path="res://assets/resources_and_consumables/resources/rocks_shadow.png" id="2_kga0e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t8pyg"]
+radius = 16.2788
+
+[node name="jazida" type="Area2D"]
+script = ExtResource("1_xk4bo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4.76837e-07, 4.76837e-07)
+scale = Vector2(1.13889, 1.47368)
+texture = ExtResource("2_kga0e")
+region_enabled = true
+region_rect = Rect2(0, 28.3827, 24.5802, 19.6173)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t8pyg")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
