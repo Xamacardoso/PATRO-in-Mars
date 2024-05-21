@@ -14,7 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_m16ab")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.82, 0.82, 0.82, 0.988235)
+modulate = Color(0.6, 0.6, 0.6, 0.988235)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,10 +29,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -156.0
-offset_top = 17.0
-offset_right = 157.0
-offset_bottom = 64.0
+offset_left = -152.0
+offset_top = 64.0
+offset_right = 161.0
+offset_bottom = 111.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
@@ -61,7 +61,7 @@ scale = Vector2(1.50163, 1.50163)
 [node name="restart" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_cfruw")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 20
 text = "RESTART"
 
 [node name="separador" type="Control" parent="VBoxContainer2"]
@@ -71,5 +71,5 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("2_cfruw")
-theme_override_font_sizes/font_size = 26
-text = "EXIT"
+theme_override_font_sizes/font_size = 20
+text = "MAIN MENU"

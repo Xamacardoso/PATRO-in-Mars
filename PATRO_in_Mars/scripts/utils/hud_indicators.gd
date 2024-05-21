@@ -11,5 +11,7 @@ extends Control
 
 
 func _process(_delta):
+	health_bar.size.x = health_initial_size * player.hp / player.max_health
+	
 	battery_bar.size.x = battery_initial_size * player.energy / player.max_energy
 	label_battery.text = str(player.energy)
