@@ -113,11 +113,13 @@ shape = SubResource("RectangleShape2D_1jq3d")
 wait_time = 0.001
 
 [node name="HitBox" parent="." instance=ExtResource("4_nja0o")]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
 scale = Vector2(1.595, 1.595)
 shape = SubResource("RectangleShape2D_bjpsa")
 
 [node name="DisableHitBoxTimer2" type="Timer" parent="HitBox"]
+
+[connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]

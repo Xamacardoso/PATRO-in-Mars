@@ -83,9 +83,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tytih"]
 
 [node name="enemy_elite" type="CharacterBody2D"]
-motion_mode = 1
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_denyo")
-SPEED = 300.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 0.6, 1)
@@ -100,6 +100,8 @@ scale = Vector2(1.309, 1.309)
 shape = SubResource("CircleShape2D_goxel")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_x0oow")]
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox"]
 scale = Vector2(2.4, 2.4)
@@ -109,9 +111,13 @@ shape = SubResource("RectangleShape2D_jteig")
 wait_time = 0.001
 
 [node name="HitBox" parent="." instance=ExtResource("3_la60v")]
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_tytih")
 
 [node name="DisableHitBoxTimer2" type="Timer" parent="HitBox"]
+
+[connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]

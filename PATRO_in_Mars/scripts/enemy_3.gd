@@ -23,6 +23,7 @@ func _physics_process(delta):
 		sprite.flip_h = false
 	move_and_slide()
 
+
 func _on_hurt_box_hurt(DAMAGE):
 	hp -= DAMAGE
 	print("Tomei dano. Meu hp: ",hp)

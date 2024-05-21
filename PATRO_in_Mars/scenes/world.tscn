@@ -1,13 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://06ok3lyso3bo"]
+[gd_scene load_steps=15 format=3 uid="uid://06ok3lyso3bo"]
 
 [ext_resource type="Texture2D" uid="uid://bpkgg555lo5q8" path="res://assets/world/tileset.png" id="1_milmd"]
 [ext_resource type="PackedScene" uid="uid://dpo7e0v52us51" path="res://scenes/player.tscn" id="2_b36kp"]
-[ext_resource type="PackedScene" uid="uid://c77dymgc3sl4t" path="res://scenes/enemy.tscn" id="3_nmy3b"]
+[ext_resource type="PackedScene" uid="uid://bahkrpnlm24qw" path="res://scenes/utils/enemy_spawner.tscn" id="3_bnh6g"]
 [ext_resource type="PackedScene" uid="uid://b5ws0ev1478r" path="res://scenes/pause_menu.tscn" id="4_kvcbl"]
-[ext_resource type="PackedScene" uid="uid://cuwayuwyraxbr" path="res://scenes/resource_box.tscn" id="4_q5am2"]
-[ext_resource type="PackedScene" uid="uid://cl4rrl7g17j7u" path="res://scenes/enemy_2.tscn" id="4_xy6p1"]
-[ext_resource type="PackedScene" uid="uid://cf0c73wyrrujf" path="res://scenes/enemy_3.tscn" id="5_3b5o1"]
+[ext_resource type="PackedScene" uid="uid://c77dymgc3sl4t" path="res://scenes/enemy.tscn" id="4_nbkpg"]
+[ext_resource type="Script" path="res://scripts/utils/enemy_spawn_info.gd" id="5_iluam"]
 [ext_resource type="PackedScene" uid="uid://dijaa50o0tivn" path="res://scenes/utils/inventory.tscn" id="6_cdg35"]
+[ext_resource type="PackedScene" uid="uid://06em18lkth6j" path="res://scenes/utils/resource_box_spawner.tscn" id="6_dfjkq"]
 [ext_resource type="PackedScene" uid="uid://dies5ews33ypj" path="res://scenes/utils/hud_indicators.tscn" id="6_i31wk"]
 [ext_resource type="PackedScene" uid="uid://bw4nabip3flfc" path="res://scenes/utils/fade_out_transition.tscn" id="10_h4c3i"]
 [ext_resource type="PackedScene" uid="uid://b6nq3tjl0f5xn" path="res://scenes/spaceship.tscn" id="11_0l0m3"]
@@ -697,6 +697,14 @@ physics_layer_0/collision_mask = 0
 physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_s1x3b")
 
+[sub_resource type="Resource" id="Resource_kcua2"]
+script = ExtResource("5_iluam")
+time_start = 1
+time_end = 60
+enemy = ExtResource("4_nbkpg")
+enemy_num = 1
+enemy_spawn_delay = 1
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -709,18 +717,32 @@ position = Vector2(99, -20)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Enemy_1" parent="Enemies" instance=ExtResource("3_nmy3b")]
-position = Vector2(-138, -158)
+[node name="Enemy_1" parent="Enemies" instance=ExtResource("4_nbkpg")]
+position = Vector2(-136, 48)
 
-[node name="Enemy_2" parent="Enemies" instance=ExtResource("4_xy6p1")]
-position = Vector2(-135, -100)
+[node name="EnemySpawner" parent="Enemies" instance=ExtResource("3_bnh6g")]
+spawns = Array[ExtResource("5_iluam")]([SubResource("Resource_kcua2")])
 
 [node name="Pickups" type="Node" parent="." groups=["Pickups"]]
 
 [node name="ResourceBoxes" type="Node" parent="."]
 
-[node name="ResourceBox" parent="ResourceBoxes" instance=ExtResource("4_q5am2")]
-position = Vector2(-139, -17)
+[node name="ResourceBoxSpawner" parent="ResourceBoxes" instance=ExtResource("6_dfjkq")]
+
+[node name="ResourceBoxSpawnTimer" parent="ResourceBoxes/ResourceBoxSpawner" index="0"]
+one_shot = true
+
+[node name="TopLeft" parent="ResourceBoxes/ResourceBoxSpawner" index="1"]
+position = Vector2(-760, -568)
+
+[node name="TopRight" parent="ResourceBoxes/ResourceBoxSpawner" index="2"]
+position = Vector2(848, -568)
+
+[node name="BottomLeft" parent="ResourceBoxes/ResourceBoxSpawner" index="3"]
+position = Vector2(-720, 464)
+
+[node name="BottomRight" parent="ResourceBoxes/ResourceBoxSpawner" index="4"]
+position = Vector2(808, 424)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 offset = Vector2(0, 40)
@@ -743,5 +765,4 @@ visible = false
 [node name="Ship" parent="." instance=ExtResource("11_0l0m3")]
 position = Vector2(10, -18)
 
-[node name="enemy_3" parent="." instance=ExtResource("5_3b5o1")]
-position = Vector2(-74, -151)
+[editable path="ResourceBoxes/ResourceBoxSpawner"]
