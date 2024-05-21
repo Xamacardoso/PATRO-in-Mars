@@ -49,6 +49,7 @@ position = Vector2(0.18137, 1)
 scale = Vector2(1.26373, 1.26373)
 shape = SubResource("RectangleShape2D_068n7")
 
+
 [node name="ShipHealthBar" type="ColorRect" parent="."]
 offset_left = -16.0
 offset_top = -20.0
@@ -57,6 +58,9 @@ offset_bottom = -16.0
 color = Color(0, 0, 0, 1)
 
 [node name="Bar" type="ColorRect" parent="ShipHealthBar"]
+
+layout_mode = 0
+
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 31.0
@@ -64,5 +68,6 @@ offset_bottom = 3.0
 color = Color(0.767025, 2.52686e-06, 9.62615e-07, 1)
 
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
+
 
 [editable path="HurtBox"]
