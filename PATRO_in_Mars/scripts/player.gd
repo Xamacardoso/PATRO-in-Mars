@@ -80,7 +80,7 @@ func _unhandled_input(event):
 func _on_battery_timer_timeout():
 	energy -= 1
 	if energy == 0:
-		if batteries >= 1:
+		if consumables["battery"]["amount"] >= 1:
 			energy = max_energy
 			consumables["battery"]["amount"] -= 1
 			batteries = consumables["battery"]["amount"]

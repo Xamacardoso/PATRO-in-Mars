@@ -391,6 +391,38 @@ size_flags_vertical = 3
 texture = ExtResource("2_sg52r")
 expand_mode = 1
 
+<<<<<<< main
+=======
+[node name="CraftingContainer" type="VBoxContainer" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 30.0
+offset_right = 206.0
+offset_bottom = 206.0
+
+[node name="CraftBatteryHolder" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+texture = ExtResource("7_aikpf")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme = ExtResource("8_aijf4")
+text = "Craft"
+
+[node name="UpgradeContainer" type="Container" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 198.0
+offset_right = 282.0
+offset_bottom = 374.0
+
+>>>>>>> local
 [node name="ResourcesLabel" type="Label" parent="InventoryHolder"]
 texture_filter = 5
 layout_mode = 0
