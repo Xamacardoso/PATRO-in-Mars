@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://06ok3lyso3bo"]
+[gd_scene load_steps=12 format=3 uid="uid://06ok3lyso3bo"]
 
 [ext_resource type="Texture2D" uid="uid://bpkgg555lo5q8" path="res://assets/world/tileset.png" id="1_milmd"]
 [ext_resource type="PackedScene" uid="uid://dpo7e0v52us51" path="res://scenes/player.tscn" id="2_b36kp"]
 [ext_resource type="PackedScene" uid="uid://c77dymgc3sl4t" path="res://scenes/enemy.tscn" id="3_nmy3b"]
 [ext_resource type="PackedScene" uid="uid://b5ws0ev1478r" path="res://scenes/pause_menu.tscn" id="4_kvcbl"]
 [ext_resource type="PackedScene" uid="uid://cuwayuwyraxbr" path="res://scenes/resource_box.tscn" id="4_q5am2"]
-[ext_resource type="PackedScene" uid="uid://d3f1um6fdvvmw" path="res://scenes/utils/stopwatch.tscn" id="5_dpdot"]
 [ext_resource type="PackedScene" uid="uid://dijaa50o0tivn" path="res://scenes/utils/inventory.tscn" id="6_cdg35"]
 [ext_resource type="PackedScene" uid="uid://dies5ews33ypj" path="res://scenes/utils/hud_indicators.tscn" id="6_i31wk"]
 [ext_resource type="PackedScene" uid="uid://bw4nabip3flfc" path="res://scenes/utils/fade_out_transition.tscn" id="10_h4c3i"]
@@ -721,15 +720,6 @@ position = Vector2(-139, -17)
 [node name="HUD" type="CanvasLayer" parent="."]
 offset = Vector2(0, 40)
 transform = Transform2D(1, 0, 0, 1, 0, 40)
-
-[node name="Stopwatch" parent="HUD" instance=ExtResource("5_dpdot")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -24.0
-offset_right = 24.0
-offset_bottom = 16.0
-grow_horizontal = 2
 
 [node name="Control" parent="HUD" instance=ExtResource("6_cdg35")]
 offset_top = -40.0

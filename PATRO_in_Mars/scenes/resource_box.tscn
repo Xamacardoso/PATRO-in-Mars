@@ -31,6 +31,9 @@ collision_mask = 1
 scale = Vector2(2.90538, 2.90538)
 shape = SubResource("RectangleShape2D_8ugou")
 
+[node name="DisableTimer" parent="HurtBox" index="1"]
+wait_time = 0.001
+
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 
 [editable path="HurtBox"]

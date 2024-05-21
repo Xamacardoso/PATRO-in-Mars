@@ -116,7 +116,7 @@ scale = Vector2(1.97242, 1.97242)
 shape = SubResource("RectangleShape2D_cftpr")
 
 [node name="DisableTimer" parent="HurtBox" index="1"]
-wait_time = 0.126
+wait_time = 0.001
 
 [node name="HitBox" parent="." instance=ExtResource("3_1fk3w")]
 collision_layer = 6
