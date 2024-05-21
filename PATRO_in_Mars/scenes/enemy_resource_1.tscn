@@ -21,15 +21,16 @@ size = Vector2(3, 3)
 light_mask = 17
 visibility_layer = 17
 collision_layer = 16
-collision_mask = 16
+collision_mask = 18
 script = ExtResource("1_4ehr7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.1875, 0.1875)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ugd4o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.26479, 2.39409)
 shape = SubResource("RectangleShape2D_qhspb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

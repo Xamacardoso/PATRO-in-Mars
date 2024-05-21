@@ -20,16 +20,18 @@ size = Vector2(2, 2)
 [node name="enemy_resource_two" type="Area2D"]
 light_mask = 17
 visibility_layer = 17
+scale = Vector2(1.76956, 1.76956)
 collision_layer = 16
-collision_mask = 16
+collision_mask = 18
 script = ExtResource("1_p2ny4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.148438, 0.148438)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ek3cd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(-1.879, -1.879)
 shape = SubResource("RectangleShape2D_2duyx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

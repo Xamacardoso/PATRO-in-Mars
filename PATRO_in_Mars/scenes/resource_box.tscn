@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuwayuwyraxbr"]
+
+[ext_resource type="PackedScene" uid="uid://paq6ku5etsqo" path="res://scenes/utils/hurt_box.tscn" id="1_mkcn8"]
+[ext_resource type="Script" path="res://scripts/resource_box.gd" id="1_qxnk7"]
+[ext_resource type="Texture2D" uid="uid://d3x7hwvytnmng" path="res://assets/resources_and_consumables/resources/chromite.png" id="2_dc3xy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xsdxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ugou"]
+
+[node name="ResourceBox" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_qxnk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.4985, 0.41, 1)
+texture_filter = 1
+texture = ExtResource("2_dc3xy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.72361, 2.72361)
+shape = SubResource("CircleShape2D_xsdxd")
+
+[node name="HurtBox" parent="." instance=ExtResource("1_mkcn8")]
+collision_layer = 1
+collision_mask = 1
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+scale = Vector2(2.90538, 2.90538)
+shape = SubResource("RectangleShape2D_8ugou")
+
+[connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
+
+[editable path="HurtBox"]

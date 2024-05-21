@@ -25,12 +25,5 @@ func _on_bullet_screen_notifier_screen_exited():
 
 
 ## Hit da bala
-
-	#if area.has_method("break_sprite"):
-		#if area.hp < 0:
-			#area.break_sprite()
-			#print("Fim")
-		#else:
-			#area.animation_player.play("hit")
-			#area.create_resource() #chamando nossa função para surgimento do recurso
-
+func _on_hit_box_area_entered(area):
+	_on_bullet_screen_notifier_screen_exited()

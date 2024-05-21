@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvrj3t23tie8q"]
+[gd_scene load_steps=6 format=3 uid="uid://cvrj3t23tie8q"]
 
+[ext_resource type="Script" path="res://scripts/bronze_resource.gd" id="1_ooo56"]
 [ext_resource type="Texture2D" uid="uid://b2pai7yxorif5" path="res://assets/resources_and_consumables/resources/bronze bar.png" id="2_xnu8i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_10po6"]
@@ -23,7 +24,8 @@ size = Vector2(11, 12)
 [node name="BronzeResource" type="Area2D"]
 texture_filter = 1
 collision_layer = 16
-collision_mask = 16
+collision_mask = 18
+script = ExtResource("1_ooo56")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 17
