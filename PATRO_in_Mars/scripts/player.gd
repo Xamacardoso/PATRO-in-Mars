@@ -86,10 +86,9 @@ func _on_battery_timer_timeout():
 			batteries = consumables["battery"]["amount"]
 			print(batteries)
 		else:
-			breakpoint
+			get_tree().change_scene_to_file("res://scenes/game_over_menu.tscn")
 			
 	battery_timer.start()
-	label_battery.text = str(energy)
 
 ## Tomar hits
 func _on_hurt_box_hurt(DAMAGE):
