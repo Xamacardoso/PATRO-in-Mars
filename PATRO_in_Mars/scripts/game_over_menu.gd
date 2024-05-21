@@ -6,6 +6,7 @@ extends Control
 func _ready():
 	restart.button_down.connect(on_start_pressed)
 	exit.button_down.connect(on_exit_pressed)
+	restart.grab_focus()
 	
 	
 func on_start_pressed() -> void:

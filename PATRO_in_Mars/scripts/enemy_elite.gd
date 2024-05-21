@@ -24,6 +24,9 @@ func _physics_process(delta):
 		sprite.flip_h = false
 	
 
+
+
+
 func _on_hurt_box_hurt(DAMAGE):
 	hp -= DAMAGE
 	print("Tomei dano. Meu hp: ",hp)
@@ -43,3 +46,4 @@ func _on_hurt_box_hurt(DAMAGE):
 		self.queue_free() 
 		# Adicionando o recurso na cena
 		get_tree().get_first_node_in_group("Pickups").add_child(resource_instance)
+

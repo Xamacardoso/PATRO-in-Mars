@@ -5,7 +5,6 @@ extends Node2D
 
 var time = 0
 
-
 func _on_timer_timeout():
 	time += 1
 	var enemy_spawns = spawns
@@ -15,6 +14,7 @@ func _on_timer_timeout():
 				enem.spawn_delay_counter += 1
 			else:
 				enem.spawn_delay_counter = 0
+				print(enem.enemy.resource_path)
 				var new_enemy = load(str(enem.enemy.resource_path))
 				var counter = 0
 				while counter < enem.enemy_num:
@@ -24,7 +24,7 @@ func _on_timer_timeout():
 					counter += 1
 
 func get_random_position():
-	var vpr = get_viewport_rect().size * randf_range(1.1,1.4)
+	var vpr = (get_viewport_rect().size/2.5) * randf_range(1.1,1.3)
 	var top_left = Vector2(player.global_position.x - vpr.x/2, player.global_position.y - vpr.y/2)
 	var top_right = Vector2(player.global_position.x + vpr.x/2, player.global_position.y - vpr.y/2)
 	var bottom_left = Vector2(player.global_position.x - vpr.x/2, player.global_position.y + vpr.y/2)
@@ -47,3 +47,10 @@ func get_random_position():
 		"right":
 			spawn_pos1 = top_right
 			spawn_pos2 = bottom_right
+	
+	# picks a random coordinate of the side to spawn the enemy
+	var x_spawn = randf_range(spawn_pos1.x , spawn_pos2.x)
+	var y_spawn = randf_range(spawn_pos1.y , spawn_pos2.y)
+	
+	# returns the position to be spawned
+	return Vector2(x_spawn, y_spawn)
