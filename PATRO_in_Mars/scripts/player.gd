@@ -4,7 +4,6 @@ class_name Player
 
 @onready var player_sprite = $PlayerSprite
 
-@onready var label_battery = $Label
 @onready var battery_timer : Timer = $BatteryTimer
 
 # Inventário do player
@@ -31,7 +30,7 @@ var energy = max_energy
 func _physics_process(_delta):
 	movement()
 	Global.damage_holder = DAMAGE
-	
+
 ## Handles player movement
 func movement() -> void:
 	# Picks the direction the player is pressing on the keyboard, and calculates where the player is going

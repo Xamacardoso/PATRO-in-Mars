@@ -50,6 +50,7 @@ scale = Vector2(1.71898, 1.71898)
 color = Color(0, 0, 0, 0.509804)
 
 [node name="bar" type="ColorRect" parent="Baterry"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 0.999996
 offset_right = 101.0
@@ -74,6 +75,7 @@ offset_bottom = 71.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 224.0
 offset_top = 112.0
 offset_right = 264.0

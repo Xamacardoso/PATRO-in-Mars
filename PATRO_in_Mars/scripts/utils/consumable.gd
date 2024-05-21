@@ -1,6 +1,6 @@
 extends TextureRect
 
-class_name ResourceGrid
+class_name ConsumableGrid
 
 @export var my_key := '' 
 @onready var icon_node : TextureRect = get_node("Icon")

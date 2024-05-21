@@ -21,4 +21,5 @@ func _on_continue_btn_pressed():
 	
 
 func _on_get_out_btn_pressed():
-	get_tree().quit()
+	Global.transition_to_scene("main_menu")
+	get_tree().paused = false
