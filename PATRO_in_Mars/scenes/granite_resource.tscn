@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cua8ay02axs4s"]
+[gd_scene load_steps=6 format=3 uid="uid://cua8ay02axs4s"]
 
+[ext_resource type="Script" path="res://scripts/granite_resource.gd" id="1_2bh1v"]
 [ext_resource type="Texture2D" uid="uid://c4ito47daq7fg" path="res://assets/resources_and_consumables/resources/hematite.png" id="1_juca1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4w1ad"]
@@ -25,7 +26,8 @@ light_mask = 17
 visibility_layer = 17
 texture_filter = 1
 collision_layer = 16
-collision_mask = 16
+collision_mask = 18
+script = ExtResource("1_2bh1v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.15625, 0.164062)

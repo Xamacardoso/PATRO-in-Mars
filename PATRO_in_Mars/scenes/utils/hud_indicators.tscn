@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://dies5ews33ypj"]
+
+[ext_resource type="Script" path="res://scenes/utils/hud_indicators.gd" id="1_3dm3a"]
+[ext_resource type="Texture2D" uid="uid://dd8415xbpg7pp" path="res://assets/user_interface/Icons/18.png" id="1_idc6m"]
+[ext_resource type="Texture2D" uid="uid://dfs4wlb88o7mk" path="res://assets/resources_and_consumables/consumables/battery.png" id="2_5pme2"]
+
+[node name="HudIndicators" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3dm3a")
+
+[node name="Health" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 118.0
+offset_bottom = 54.0
+scale = Vector2(1.72321, 1.72321)
+color = Color(0, 0, 0, 0.509804)
+
+[node name="bar" type="ColorRect" parent="Health"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 101.0
+offset_bottom = 21.0
+color = Color(0, 0.711742, 0.580977, 1)
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="Health"]
+texture_filter = 5
+position = Vector2(3, 10)
+scale = Vector2(0.680859, 0.768149)
+texture = ExtResource("1_idc6m")
+flip_h = true
+region_rect = Rect2(64, 0, 32, 32)
+
+[node name="Baterry" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 88.0
+offset_right = 118.0
+offset_bottom = 110.0
+scale = Vector2(1.71898, 1.71898)
+color = Color(0, 0, 0, 0.509804)
+
+[node name="bar" type="ColorRect" parent="Baterry"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 101.0
+offset_bottom = 21.0
+color = Color(0.351667, 0.645289, 0.986688, 1)
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="Baterry"]
+texture_filter = 1
+position = Vector2(3, 11)
+scale = Vector2(0.648437, 0.859375)
+texture = ExtResource("2_5pme2")

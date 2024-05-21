@@ -20,7 +20,7 @@ func _ready() -> void:
 var hp = 100.0
 var max_health = 100.0
 var health_recovery = 1.0
-var max_energy = 10.0
+var max_energy = 15.0
 var energy = max_energy
 @export var DAMAGE = 10.0
 @export var SPEED = 30.0
