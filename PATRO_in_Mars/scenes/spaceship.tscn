@@ -1,37 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6nq3tjl0f5xn"]
+[gd_scene load_steps=8 format=3 uid="uid://b6nq3tjl0f5xn"]
 
 [ext_resource type="Texture2D" uid="uid://bodr6mre1uoot" path="res://assets/Nairan - Bomber - Base.png" id="1_aelb5"]
+[ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_v6t1j"]
+[ext_resource type="Texture2D" uid="uid://bs5bf860r4082" path="res://assets/ship_outline.png" id="2_ivssd"]
 [ext_resource type="PackedScene" uid="uid://paq6ku5etsqo" path="res://scenes/utils/hurt_box.tscn" id="2_mulur"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vqqwx"]
-atlas = ExtResource("1_aelb5")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_84bbm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vqqwx")
-}],
-"loop": true,
-"name": &"broken",
-"speed": 5.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dp52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_068n7"]
 size = Vector2(20.287, 23.7393)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fqiq4"]
+
 [node name="Ship" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 11
+script = ExtResource("1_v6t1j")
 
-[node name="ShipSprite" type="AnimatedSprite2D" parent="."]
+[node name="ShipOutline" type="Sprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_84bbm")
-animation = &"broken"
-autoplay = "broken"
+scale = Vector2(1.07159, 1.15)
+texture = ExtResource("2_ivssd")
+
+[node name="ShipSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_aelb5")
 
 [node name="ShipCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -46,5 +39,31 @@ collision_mask = 4
 position = Vector2(0.18137, 1)
 scale = Vector2(1.26373, 1.26373)
 shape = SubResource("RectangleShape2D_068n7")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionRange" type="CollisionShape2D" parent="InteractionArea"]
+scale = Vector2(2.75607, 2.75607)
+shape = SubResource("CircleShape2D_fqiq4")
+
+[node name="ShipHealthBar" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = -16.0
+color = Color(0, 0, 0, 1)
+
+[node name="Bar" type="ColorRect" parent="ShipHealthBar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 39.0
+offset_bottom = 3.0
+color = Color(1, 0, 0, 1)
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
 
 [editable path="HurtBox"]

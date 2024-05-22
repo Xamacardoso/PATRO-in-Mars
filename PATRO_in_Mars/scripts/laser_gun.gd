@@ -5,9 +5,7 @@ extends Area2D
 var DAMAGE = 0.0
 
 func _ready() -> void:
-	print("Laser Gun pega o dano do player, que é o : ", player)
 	DAMAGE = player.DAMAGE
-	print("LaserGun nasceu com dano : ", DAMAGE)
 
 ## Calcula quantos inimigos tem em volta e olha pro mais próximo
 func _physics_process(_delta):

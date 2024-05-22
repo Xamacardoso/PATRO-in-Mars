@@ -2,6 +2,9 @@ extends Node
 
 @onready var can_pause = true
 @onready var transition_scene : PackedScene = preload("res://scenes/utils/fade_in_transition.tscn")
+@onready var last_time = "Last Time: 00:00"
+@onready var last_time_holder = ""
+
 
 ## Database de itens
 var resources := {

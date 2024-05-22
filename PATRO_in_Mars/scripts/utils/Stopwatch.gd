@@ -12,3 +12,7 @@ func _process(delta):
 	var seconds_string = "%02d" %seconds
 	var minutes_string = "%02d" %minutes
 	$".".text = minutes_string + ":" + seconds_string
+
+
+func _on_player_player_died():
+	Global.last_time_holder = "Last Time: " + $".".text
