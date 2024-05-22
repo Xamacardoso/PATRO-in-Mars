@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5ws0ev1478r"]
+[gd_scene load_steps=14 format=3 uid="uid://b5ws0ev1478r"]
 
 [ext_resource type="Script" path="res://scripts/Pause_Menu.gd" id="1_opglt"]
-[ext_resource type="FontFile" uid="uid://cfs0yuxhvbily" path="res://assets/user_interface/fonts/Warzone.ttf" id="2_cgsv5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_etv05"]
 
@@ -74,7 +73,6 @@ process_mode = 3
 texture_filter = 1
 layout_mode = 2
 theme = SubResource("Theme_po2a5")
-theme_override_fonts/font = ExtResource("2_cgsv5")
 text = "CONTINUE
 "
 
@@ -82,7 +80,6 @@ text = "CONTINUE
 process_mode = 3
 layout_mode = 2
 theme = SubResource("Theme_l4rtm")
-theme_override_fonts/font = ExtResource("2_cgsv5")
 text = "
 EXIT
 "
