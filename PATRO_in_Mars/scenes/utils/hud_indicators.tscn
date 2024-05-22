@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dies5ews33ypj"]
+[gd_scene load_steps=7 format=3 uid="uid://dies5ews33ypj"]
 
 [ext_resource type="Script" path="res://scripts/utils/hud_indicators.gd" id="1_3dm3a"]
 [ext_resource type="Texture2D" uid="uid://dd8415xbpg7pp" path="res://assets/user_interface/Icons/18.png" id="1_idc6m"]
 [ext_resource type="Texture2D" uid="uid://dfs4wlb88o7mk" path="res://assets/resources_and_consumables/consumables/battery.png" id="2_5pme2"]
+[ext_resource type="Texture2D" uid="uid://diotpbjyff0c2" path="res://assets/user_interface/Icons/08.png" id="3_obeer"]
 [ext_resource type="PackedScene" uid="uid://d3f1um6fdvvmw" path="res://scenes/utils/stopwatch.tscn" id="4_ce3hx"]
 [ext_resource type="FontFile" uid="uid://cfs0yuxhvbily" path="res://assets/user_interface/fonts/Warzone.ttf" id="5_6usra"]
 
@@ -32,7 +33,7 @@ offset_right = 101.0
 offset_bottom = 21.0
 color = Color(0, 0.711742, 0.580977, 1)
 
-[node name="AnimatedSprite2D" type="Sprite2D" parent="Health"]
+[node name="Sprite2D" type="Sprite2D" parent="Health"]
 texture_filter = 5
 position = Vector2(3, 10)
 scale = Vector2(0.680859, 0.768149)
@@ -57,11 +58,12 @@ offset_right = 101.0
 offset_bottom = 21.0
 color = Color(5.0056e-06, 0.735759, 0.949129, 1)
 
-[node name="AnimatedSprite2D" type="Sprite2D" parent="Baterry"]
-texture_filter = 1
+[node name="Sprite2D" type="Sprite2D" parent="Baterry"]
+modulate = Color(0, 1, 1, 1)
+texture_filter = 5
 position = Vector2(3, 11)
 scale = Vector2(0.648437, 0.859375)
-texture = ExtResource("2_5pme2")
+texture = ExtResource("3_obeer")
 
 [node name="Stopwatch" parent="." instance=ExtResource("4_ce3hx")]
 layout_mode = 1
@@ -74,13 +76,33 @@ offset_right = 24.0
 offset_bottom = 71.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="EnergyLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 224.0
+offset_left = 115.0
 offset_top = 112.0
-offset_right = 264.0
+offset_right = 155.0
 offset_bottom = 135.0
 theme_override_fonts/font = ExtResource("5_6usra")
 text = "70"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 40.0
+offset_top = 152.0
+offset_right = 80.0
+offset_bottom = 192.0
+texture = ExtResource("2_5pme2")
+
+[node name="BatteryCounter" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("5_6usra")
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1

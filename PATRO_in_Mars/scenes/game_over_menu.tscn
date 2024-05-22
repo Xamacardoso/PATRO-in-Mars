@@ -73,3 +73,13 @@ size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("2_cfruw")
 theme_override_font_sizes/font_size = 20
 text = "MAIN MENU"
+
+[node name="LastTimeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 248.0
+offset_right = 772.0
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("2_cfruw")
+theme_override_font_sizes/font_size = 40
+text = "LAST TIME: 00:00"

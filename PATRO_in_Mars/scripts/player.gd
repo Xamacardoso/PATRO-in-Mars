@@ -85,6 +85,7 @@ func _on_battery_timer_timeout():
 			batteries = consumables["battery"]["amount"]
 			print(batteries)
 		else:
+			emit_signal("player_died")
 			get_tree().change_scene_to_file("res://scenes/game_over_menu.tscn")
 			
 	battery_timer.start()
@@ -95,7 +96,6 @@ func _on_hurt_box_hurt(DAMAGE):
 	print(hp)
 	if hp <= 0:
 		queue_free()
-		
 		
 
 

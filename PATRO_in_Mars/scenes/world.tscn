@@ -702,8 +702,8 @@ script = ExtResource("5_iluam")
 time_start = 1
 time_end = 60
 enemy = ExtResource("4_nbkpg")
-enemy_num = 1
-enemy_spawn_delay = 1
+enemy_num = 0
+enemy_spawn_delay = 0
 
 [node name="World" type="Node2D"]
 
@@ -716,9 +716,6 @@ layer_0/tile_data = PackedInt32Array(-720913, 589824, 6, -655377, 589824, 6, -58
 position = Vector2(99, -20)
 
 [node name="Enemies" type="Node" parent="."]
-
-[node name="Enemy_1" parent="Enemies" instance=ExtResource("4_nbkpg")]
-position = Vector2(-136, 48)
 
 [node name="EnemySpawner" parent="Enemies" instance=ExtResource("3_bnh6g")]
 spawns = Array[ExtResource("5_iluam")]([SubResource("Resource_kcua2")])
@@ -733,16 +730,16 @@ spawns = Array[ExtResource("5_iluam")]([SubResource("Resource_kcua2")])
 one_shot = true
 
 [node name="TopLeft" parent="ResourceBoxes/ResourceBoxSpawner" index="1"]
-position = Vector2(-760, -568)
+position = Vector2(-537, -406)
 
 [node name="TopRight" parent="ResourceBoxes/ResourceBoxSpawner" index="2"]
-position = Vector2(848, -568)
+position = Vector2(682, -394)
 
 [node name="BottomLeft" parent="ResourceBoxes/ResourceBoxSpawner" index="3"]
-position = Vector2(-720, 464)
+position = Vector2(-535, 475)
 
 [node name="BottomRight" parent="ResourceBoxes/ResourceBoxSpawner" index="4"]
-position = Vector2(808, 424)
+position = Vector2(672, 454)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 offset = Vector2(0, 40)
@@ -765,4 +762,7 @@ visible = false
 [node name="Ship" parent="." instance=ExtResource("11_0l0m3")]
 position = Vector2(10, -18)
 
+[connection signal="player_died" from="Player" to="HUD/HudIndicators/Stopwatch" method="_on_player_player_died"]
+
 [editable path="ResourceBoxes/ResourceBoxSpawner"]
+[editable path="HUD/HudIndicators"]
