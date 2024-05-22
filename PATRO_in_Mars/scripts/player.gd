@@ -96,3 +96,6 @@ func _on_hurt_box_hurt(DAMAGE):
 	if hp <= 0:
 		queue_free()
 		
+		
+
+
