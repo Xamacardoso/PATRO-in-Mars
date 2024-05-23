@@ -25,6 +25,7 @@ size = Vector2(9.96875, 9.96875)
 light_mask = 17
 visibility_layer = 17
 texture_filter = 1
+scale = Vector2(1.5, 1.5)
 collision_layer = 16
 collision_mask = 18
 script = ExtResource("1_2bh1v")
@@ -37,4 +38,9 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0d06r")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 35.0
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

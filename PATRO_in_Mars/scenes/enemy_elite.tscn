@@ -84,11 +84,14 @@ animations = [{
 
 [node name="enemy_elite" type="CharacterBody2D"]
 collision_layer = 8
-collision_mask = 8
+collision_mask = 7
 script = ExtResource("1_denyo")
+SPEED = 25.0
+hp = 120.0
+DAMAGE = 20.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(1, 1, 0.6, 1)
+self_modulate = Color(1, 0.14902, 1, 1)
 texture_filter = 1
 position = Vector2(1, -15)
 scale = Vector2(1.2, 1.2)
@@ -100,6 +103,7 @@ scale = Vector2(1.309, 1.309)
 shape = SubResource("CircleShape2D_goxel")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_x0oow")]
+visible = false
 collision_layer = 8
 collision_mask = 8
 
@@ -111,6 +115,7 @@ shape = SubResource("RectangleShape2D_jteig")
 wait_time = 0.001
 
 [node name="HitBox" parent="." instance=ExtResource("3_la60v")]
+visible = false
 collision_layer = 6
 collision_mask = 6
 

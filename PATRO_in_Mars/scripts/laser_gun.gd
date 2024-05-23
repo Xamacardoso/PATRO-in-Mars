@@ -9,11 +9,14 @@ func _ready() -> void:
 
 ## Calcula quantos inimigos tem em volta e olha pro mais próximo
 func _physics_process(_delta):
-	#print("MEU DANO E O DANO DO PLAYER: ", DAMAGE)
 	var targets_in_range = get_overlapping_areas()
 	if targets_in_range.size() > 0:
-		var target = targets_in_range.front()
-		look_at(target.global_position)
+		var closest_target = targets_in_range[0]
+		for target in targets_in_range:
+			if target.global_position.distance_to(self.global_position) < closest_target.global_position.distance_to(self.global_position):
+				closest_target = target
+		look_at(closest_target.global_position)
+		
 		gun_sprite.flip_v = true if (global_rotation > 1.5 or global_rotation < -1.5) else false
 
 ## Atirar
@@ -24,5 +27,6 @@ func shoot() -> void:
 	new_bullet.global_rotation = %ShootingPoint.global_rotation
 	%ShootingPoint.add_child(new_bullet)
 
+## Chama a função atirar, quando o tempo de cooldown do disparo acaba
 func _on_shoot_cooldown_timeout():
 	shoot()

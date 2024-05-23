@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://bpkgg555lo5q8" path="res://assets/world/tileset.png" id="1_milmd"]
 [ext_resource type="PackedScene" uid="uid://dpo7e0v52us51" path="res://scenes/player.tscn" id="2_b36kp"]
-[ext_resource type="PackedScene" path="res://scenes/utils/enemy_spawner.tscn" id="3_bnh6g"]
+[ext_resource type="PackedScene" uid="uid://bahkrpnlm24qw" path="res://scenes/utils/enemy_spawner.tscn" id="3_bnh6g"]
 [ext_resource type="PackedScene" uid="uid://b5ws0ev1478r" path="res://scenes/pause_menu.tscn" id="4_kvcbl"]
 [ext_resource type="PackedScene" uid="uid://c77dymgc3sl4t" path="res://scenes/enemy.tscn" id="4_nbkpg"]
 [ext_resource type="Script" path="res://scripts/utils/enemy_spawn_info.gd" id="5_iluam"]
 [ext_resource type="PackedScene" uid="uid://dijaa50o0tivn" path="res://scenes/utils/inventory.tscn" id="6_cdg35"]
-[ext_resource type="PackedScene" path="res://scenes/utils/resource_box_spawner.tscn" id="6_dfjkq"]
+[ext_resource type="PackedScene" uid="uid://06em18lkth6j" path="res://scenes/utils/resource_box_spawner.tscn" id="6_dfjkq"]
 [ext_resource type="PackedScene" uid="uid://dies5ews33ypj" path="res://scenes/utils/hud_indicators.tscn" id="6_i31wk"]
 [ext_resource type="PackedScene" uid="uid://bw4nabip3flfc" path="res://scenes/utils/fade_out_transition.tscn" id="10_h4c3i"]
 [ext_resource type="PackedScene" uid="uid://b6nq3tjl0f5xn" path="res://scenes/spaceship.tscn" id="11_0l0m3"]
@@ -700,7 +700,7 @@ sources/0 = SubResource("TileSetAtlasSource_s1x3b")
 [sub_resource type="Resource" id="Resource_kcua2"]
 script = ExtResource("5_iluam")
 time_start = 1
-time_end = 60
+time_end = 120
 enemy = ExtResource("4_nbkpg")
 enemy_num = 1
 enemy_spawn_delay = 2
@@ -727,16 +727,17 @@ spawns = Array[ExtResource("5_iluam")]([SubResource("Resource_kcua2")])
 [node name="ResourceBoxSpawner" parent="ResourceBoxes" instance=ExtResource("6_dfjkq")]
 
 [node name="ResourceBoxSpawnTimer" parent="ResourceBoxes/ResourceBoxSpawner" index="0"]
+wait_time = 1.7
 one_shot = true
 
 [node name="TopLeft" parent="ResourceBoxes/ResourceBoxSpawner" index="1"]
-position = Vector2(-302, -267)
+position = Vector2(-280, -240)
 
 [node name="TopRight" parent="ResourceBoxes/ResourceBoxSpawner" index="2"]
-position = Vector2(417, -264)
+position = Vector2(400, -248)
 
 [node name="BottomLeft" parent="ResourceBoxes/ResourceBoxSpawner" index="3"]
-position = Vector2(-326, 247)
+position = Vector2(-272, 240)
 
 [node name="BottomRight" parent="ResourceBoxes/ResourceBoxSpawner" index="4"]
 position = Vector2(394, 226)

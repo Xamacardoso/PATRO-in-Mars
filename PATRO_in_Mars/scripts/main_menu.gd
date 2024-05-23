@@ -15,7 +15,7 @@ func _ready():
 	
 func on_start_pressed() -> void:
 	#get_tree().change_scene_to_packed(start_level)
-	Global.transition_to_scene("game")
+	Global.transition_to_scene("introduction")
 	
 func on_button2_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/history.tscn")

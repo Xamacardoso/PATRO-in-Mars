@@ -25,6 +25,7 @@ size = Vector2(7.5, 7.5)
 
 [node name="CopperResource" type="Area2D"]
 texture_filter = 1
+scale = Vector2(1.5, 1.5)
 collision_layer = 16
 collision_mask = 18
 script = ExtResource("1_35asv")
@@ -38,4 +39,9 @@ sprite_frames = SubResource("SpriteFrames_mic3f")
 position = Vector2(0.75, 0.25)
 shape = SubResource("RectangleShape2D_3on8i")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 35.0
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

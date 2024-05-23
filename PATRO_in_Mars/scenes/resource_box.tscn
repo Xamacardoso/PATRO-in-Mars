@@ -8,10 +8,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ugou"]
 
-[node name="ResourceBox" type="Area2D"]
+[node name="ResourceBox" type="StaticBody2D"]
 scale = Vector2(0.3, 0.3)
-collision_layer = 0
-collision_mask = 0
+collision_mask = 10
 script = ExtResource("1_qxnk7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,12 +19,13 @@ texture_filter = 1
 texture = ExtResource("2_dc3xy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2.72361, 2.72361)
+scale = Vector2(3.18802, 3.1969)
 shape = SubResource("CircleShape2D_xsdxd")
 
 [node name="HurtBox" parent="." instance=ExtResource("1_mkcn8")]
 collision_layer = 1
 collision_mask = 1
+HurtBoxType = 2
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 scale = Vector2(2.90538, 2.90538)
@@ -34,6 +34,11 @@ shape = SubResource("RectangleShape2D_8ugou")
 [node name="DisableTimer" parent="HurtBox" index="1"]
 wait_time = 0.001
 
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 45.0
+one_shot = true
+
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
 
 [editable path="HurtBox"]

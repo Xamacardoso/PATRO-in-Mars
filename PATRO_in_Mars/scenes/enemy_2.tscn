@@ -83,11 +83,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vwc8"]
 
 [node name="Enemy_2" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_uraas")
-hp = 20.0
+SPEED = 17.0
+hp = 35.0
+DAMAGE = 10.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0.690196, 1, 1)
 texture_filter = 1
 position = Vector2(1, -15)
 scale = Vector2(0.979, 1)

@@ -85,10 +85,13 @@ animations = [{
 [node name="enemy_3" type="CharacterBody2D"]
 position = Vector2(1, -15)
 scale = Vector2(0.979, 0.979)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 8
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_dn513")
+SPEED = 22.0
+hp = 55.0
+DAMAGE = 15.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

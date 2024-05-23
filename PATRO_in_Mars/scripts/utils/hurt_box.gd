@@ -11,7 +11,6 @@ signal hurt(DAMAGE)
 
 func _on_area_entered(area):
 	if area.is_in_group("attack"):
-		print(area, " entrou em mim e o dano dela é ", area.DAMAGE)
 		if area.get("DAMAGE") != null:
 			match HurtBoxType:
 				0: # Cooldown
@@ -31,5 +30,3 @@ func _on_disable_timer_timeout():
 	collision.call_deferred("set", "disabled", false)
 
 
-func _on_ship_mouse_shape_entered(shape_idx):
-	pass # Replace with function body.

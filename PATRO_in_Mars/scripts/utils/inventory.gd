@@ -43,7 +43,7 @@ func check_if_can_craft(recipe):
 		"battery":
 			can_craft_battery = true
 			for bat_need in battery_needs:
-				if player.resources[bat_need]["amount"] < 5:
+				if player.resources[bat_need]["amount"] < 3:
 					can_craft_battery = false
 					break
 					
@@ -59,7 +59,7 @@ func _on_button_pressed():
 	if can_craft_battery:
 		player.consumables["battery"]["amount"] += 1
 		for item in battery_needs:
-			player.resources[item]["amount"] -= 5
+			player.resources[item]["amount"] -= 3
 		check_if_can_craft("battery")
 
 

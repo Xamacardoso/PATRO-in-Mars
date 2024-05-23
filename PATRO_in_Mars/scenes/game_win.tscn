@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=3 uid="uid://by2flvgpd6o03"]
+
+[ext_resource type="Script" path="res://scripts/game_win.gd" id="1_fau2u"]
+[ext_resource type="FontFile" uid="uid://cfs0yuxhvbily" path="res://assets/user_interface/fonts/Warzone.ttf" id="2_7jk0l"]
+[ext_resource type="Texture2D" uid="uid://ctb1nsqk2ccpw" path="res://assets/user_interface/mars-planet-5k-eu.jpg" id="2_qqwq6"]
+
+[node name="Game_Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fau2u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.593134, 0.593134, 0.593134, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qqwq6")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -525.0
+offset_top = 166.0
+offset_right = 531.0
+offset_bottom = 193.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_7jk0l")
+theme_override_font_sizes/font_size = 24
+text = "CONGRATULATIONS,YOU HELPED P.A.T.R.O TO ESCAPE FROM MARS!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LastTimeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.0
+offset_top = 308.0
+offset_right = 228.0
+offset_bottom = 353.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_7jk0l")
+theme_override_font_sizes/font_size = 45
+text = "YOUR TIME: 00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -233.5
+offset_top = 71.0
+offset_right = 238.5
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7jk0l")
+theme_override_font_sizes/font_size = 80
+text = "YOU WON!"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -111.0
+offset_right = 20.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Restart" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7jk0l")
+theme_override_font_sizes/font_size = 26
+text = "RESTART"
+
+[node name="MainMenu" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7jk0l")
+theme_override_font_sizes/font_size = 26
+text = "MAIN MENU"
+
+[connection signal="pressed" from="VBoxContainer2/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer2/MainMenu" to="." method="_on_main_menu_pressed"]

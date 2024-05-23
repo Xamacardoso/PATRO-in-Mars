@@ -7,4 +7,5 @@ func _ready():
 	
 	
 func on_pause_menu_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/pause_menu.tscn")
+	visible = !visible
+	$"../Menu".visible = !$"../Menu".visible

@@ -20,7 +20,7 @@ func _ready() -> void:
 var hp = 100.0
 var max_health = 100.0
 var health_recovery = 1.0
-@export var max_energy = 70
+@export var max_energy = 90
 var energy = max_energy
 @export var DAMAGE = 10.0
 @export var SPEED = 30.0
@@ -62,7 +62,12 @@ func play_animation(movementvector) -> void:
 		
 
 func game_over() -> void:
-	queue_free()
+	Global.last_time = "YOUR TIME: " + $"../HUD/HudIndicators/Stopwatch".text
+	Global.transition_to_scene("game_over")
+
+func win() -> void:
+	Global.last_time = "YOUR TIME: " + $"../HUD/HudIndicators/Stopwatch".text
+	Global.transition_to_scene("win")
 
 signal add_item
 
@@ -90,7 +95,7 @@ func _on_battery_timer_timeout():
 			print(batteries)
 		else:
 			emit_signal("player_died")
-			get_tree().change_scene_to_file("res://scenes/game_over_menu.tscn")
+			game_over()
 			
 	battery_timer.start()
 
@@ -105,7 +110,7 @@ func _on_hurt_box_hurt(DAMAGE):
 	hp -= DAMAGE
 	print(hp)
 	if hp <= 0:
-		queue_free()
+		game_over()
 		
 
 

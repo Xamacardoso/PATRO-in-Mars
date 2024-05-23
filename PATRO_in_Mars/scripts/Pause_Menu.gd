@@ -15,6 +15,8 @@ func _unhandled_input(event):
 
 
 
+
+
 func _on_continue_btn_pressed():
 	get_tree().paused = false
 	visible = false
@@ -23,3 +25,8 @@ func _on_continue_btn_pressed():
 func _on_get_out_btn_pressed():
 	Global.transition_to_scene("main_menu")
 	get_tree().paused = false
+
+
+func _on_controls_btn_pressed():
+	$Controls.visible = true
+	$Menu.visible = false

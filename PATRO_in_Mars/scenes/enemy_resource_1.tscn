@@ -20,6 +20,7 @@ size = Vector2(3, 3)
 [node name="Enemy_Resource" type="Area2D"]
 light_mask = 17
 visibility_layer = 17
+scale = Vector2(1.5, 1.5)
 collision_layer = 16
 collision_mask = 18
 script = ExtResource("1_4ehr7")
@@ -33,4 +34,9 @@ sprite_frames = SubResource("SpriteFrames_ugd4o")
 scale = Vector2(2.26479, 2.39409)
 shape = SubResource("RectangleShape2D_qhspb")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 35.0
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

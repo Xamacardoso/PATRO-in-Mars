@@ -54,7 +54,7 @@ offset_right = 66.0
 offset_bottom = 159.0
 theme_override_fonts/font = ExtResource("2_p0yq4")
 theme_override_font_sizes/font_size = 18
-text = ". Here you can see which commands are responsible for which functions:"
+text = "- Here you can see which commands are responsible for which functions:"
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
@@ -69,12 +69,9 @@ D (right), W (up), and S (down).
 
 -> To access the inventory, press the Tab key.
 
--> Adding items and batteries is done using the K and J keys, respectively.
+-> When approaching the spaceship, you can store your objects pressing 'E'.
 
--> When approaching the spaceship, you can store your objects with the letter E.
-
--> Finally, the letter M allows the player to evolve their abilities and weapons when they have sufficient 
-   resources."
+"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

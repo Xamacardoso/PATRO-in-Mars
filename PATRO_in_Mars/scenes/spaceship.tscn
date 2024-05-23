@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6nq3tjl0f5xn"]
+[gd_scene load_steps=11 format=3 uid="uid://b6nq3tjl0f5xn"]
 
 [ext_resource type="Texture2D" uid="uid://bodr6mre1uoot" path="res://assets/Nairan - Bomber - Base.png" id="1_aelb5"]
 [ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_v6t1j"]
+[ext_resource type="Texture2D" uid="uid://bs5bf860r4082" path="res://assets/ship_outline.png" id="2_f6gke"]
 [ext_resource type="PackedScene" uid="uid://paq6ku5etsqo" path="res://scenes/utils/hurt_box.tscn" id="2_mulur"]
+[ext_resource type="Texture2D" uid="uid://bjimvpq7ufpv8" path="res://assets/resources_and_consumables/resources/shard_01i.png" id="5_m36dj"]
+[ext_resource type="Texture2D" uid="uid://c4ito47daq7fg" path="res://assets/resources_and_consumables/resources/hematite.png" id="6_ilybn"]
+[ext_resource type="Texture2D" uid="uid://dc3vlnjfgycwr" path="res://assets/resources_and_consumables/resources/iron bar.png" id="7_ugai4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dp52"]
 
@@ -19,6 +23,7 @@ script = ExtResource("1_v6t1j")
 [node name="ShipOutline" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(1.07159, 1.15)
+texture = ExtResource("2_f6gke")
 
 [node name="ShipSprite" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -30,6 +35,7 @@ scale = Vector2(0.94683, 0.94683)
 shape = SubResource("CapsuleShape2D_3dp52")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_mulur")]
+scale = Vector2(0.814322, 0.975017)
 collision_layer = 4
 collision_mask = 4
 
@@ -60,6 +66,54 @@ offset_top = 1.0
 offset_right = 39.0
 offset_bottom = 3.0
 color = Color(1, 0, 0, 1)
+
+[node name="ShipPanel" type="Panel" parent="."]
+visible = false
+texture_filter = 3
+offset_left = -26.0
+offset_top = -67.0
+offset_right = 6.0
+offset_bottom = -27.0
+scale = Vector2(1.62851, 1)
+
+[node name="NecessaryResource1" type="Sprite2D" parent="ShipPanel"]
+texture_filter = 3
+position = Vector2(5.9072, 7)
+scale = Vector2(0.141619, 0.229383)
+texture = ExtResource("7_ugai4")
+
+[node name="Label" type="Label" parent="ShipPanel/NecessaryResource1"]
+offset_left = 32.0
+offset_top = -33.3928
+offset_right = 74.0
+offset_bottom = -10.3928
+scale = Vector2(2.86088, 2.73269)
+text = "0 / 20"
+
+[node name="NecessaryResource2" type="Sprite2D" parent="ShipPanel"]
+position = Vector2(5.52653, 20)
+scale = Vector2(0.134522, 0.210083)
+texture = ExtResource("6_ilybn")
+
+[node name="Label" type="Label" parent="ShipPanel/NecessaryResource2"]
+offset_left = 36.518
+offset_top = -38.0802
+offset_right = 78.518
+offset_bottom = -15.0802
+scale = Vector2(3.09483, 3.09483)
+text = "0 / 25"
+
+[node name="NecessaryResource3" type="Sprite2D" parent="ShipPanel"]
+position = Vector2(5.52653, 33)
+scale = Vector2(0.422428, 0.686723)
+texture = ExtResource("5_m36dj")
+
+[node name="Label" type="Label" parent="ShipPanel/NecessaryResource3"]
+offset_left = 11.6291
+offset_top = -11.6495
+offset_right = 53.6291
+offset_bottom = 11.3505
+text = "0 / 45"
 
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]

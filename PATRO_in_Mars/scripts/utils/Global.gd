@@ -71,9 +71,11 @@ var consumables := {
 ## Cenas principais
 var main_scenes := {
 	"game" : preload("res://scenes/world.tscn"),
+	"introduction":preload("res://scenes/Introduction.tscn"),
 	"history" : preload("res://scenes/history.tscn"),
 	"main_menu" : preload("res://scenes/main_menu.tscn"),
 	"game_over" : preload("res://scenes/game_over_menu.tscn"),
+	"win" : preload("res://scenes/game_win.tscn")
 }
 
 # gambiarra do dano da bala
