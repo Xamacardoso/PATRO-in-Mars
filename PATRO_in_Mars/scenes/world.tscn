@@ -702,8 +702,8 @@ script = ExtResource("5_iluam")
 time_start = 1
 time_end = 60
 enemy = ExtResource("4_nbkpg")
-enemy_num = 0
-enemy_spawn_delay = 0
+enemy_num = 1
+enemy_spawn_delay = 2
 
 [node name="World" type="Node2D"]
 
@@ -730,16 +730,16 @@ spawns = Array[ExtResource("5_iluam")]([SubResource("Resource_kcua2")])
 one_shot = true
 
 [node name="TopLeft" parent="ResourceBoxes/ResourceBoxSpawner" index="1"]
-position = Vector2(-537, -406)
+position = Vector2(-302, -267)
 
 [node name="TopRight" parent="ResourceBoxes/ResourceBoxSpawner" index="2"]
-position = Vector2(682, -394)
+position = Vector2(417, -264)
 
 [node name="BottomLeft" parent="ResourceBoxes/ResourceBoxSpawner" index="3"]
-position = Vector2(-535, 475)
+position = Vector2(-326, 247)
 
 [node name="BottomRight" parent="ResourceBoxes/ResourceBoxSpawner" index="4"]
-position = Vector2(672, 454)
+position = Vector2(394, 226)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 offset = Vector2(0, 40)

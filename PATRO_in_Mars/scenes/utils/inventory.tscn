@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dijaa50o0tivn"]
+[gd_scene load_steps=17 format=3 uid="uid://dijaa50o0tivn"]
 
 [ext_resource type="Script" path="res://scripts/utils/inventory.gd" id="1_8llto"]
 [ext_resource type="Texture2D" uid="uid://0gayff203vlg" path="res://assets/user_interface/Card X3/Card X5.png" id="1_040do"]
@@ -9,9 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://84mgb4gljkxi" path="res://assets/user_interface/Card X2/Card X3.png" id="7_aikpf"]
 [ext_resource type="Theme" uid="uid://i8vl8cqvfgvp" path="res://assets/themes/ui_theme.tres" id="8_aijf4"]
 [ext_resource type="Texture2D" uid="uid://dfs4wlb88o7mk" path="res://assets/resources_and_consumables/consumables/battery.png" id="8_udfkt"]
-[ext_resource type="Texture2D" uid="uid://4j3eoldn6i03" path="res://assets/user_interface/Card X1/Panel Empty.png" id="9_4b0qk"]
+[ext_resource type="Texture2D" uid="uid://clf1or0nt87mk" path="res://assets/user_interface/Card X3/Card X6.png" id="9_ed610"]
 [ext_resource type="Texture2D" uid="uid://digmhpjn3oqlc" path="res://assets/resources_and_consumables/resources/shard_01c.png" id="10_mgm4w"]
 [ext_resource type="Texture2D" uid="uid://c4ito47daq7fg" path="res://assets/resources_and_consumables/resources/hematite.png" id="11_pvcu4"]
+[ext_resource type="Texture2D" uid="uid://nri1lkxlwqh1" path="res://assets/user_interface/Icons/upgrade.png" id="13_yr672"]
+[ext_resource type="Texture2D" uid="uid://bjimvpq7ufpv8" path="res://assets/resources_and_consumables/resources/shard_01i.png" id="14_h5kgt"]
+[ext_resource type="Texture2D" uid="uid://b1h1o4ujtm4t0" path="res://assets/resources_and_consumables/resources/copper bar.png" id="15_xac7p"]
+[ext_resource type="Texture2D" uid="uid://b2pai7yxorif5" path="res://assets/resources_and_consumables/resources/bronze bar.png" id="16_81skl"]
 
 [node name="Control" type="Control"]
 process_mode = 3
@@ -400,9 +404,9 @@ expand_mode = 1
 [node name="CraftingContainer" type="VBoxContainer" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder"]
 layout_mode = 0
 offset_left = 82.0
-offset_top = 30.0
+offset_top = 21.0
 offset_right = 226.0
-offset_bottom = 206.0
+offset_bottom = 199.0
 
 [node name="CraftBatteryHolder" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer"]
 custom_minimum_size = Vector2(100, 100)
@@ -433,67 +437,193 @@ texture = ExtResource("8_udfkt")
 layout_mode = 2
 
 [node name="BatteryNeed1" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer/BatteryNeedsContainer"]
-custom_minimum_size = Vector2(70, 40)
+custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
-texture = ExtResource("9_4b0qk")
+texture = ExtResource("9_ed610")
 expand_mode = 2
+flip_v = true
 
 [node name="TextureRect" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer/BatteryNeedsContainer/BatteryNeed1"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 14.0
-offset_right = 57.0
-offset_bottom = 54.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -7.0
+offset_right = 20.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_mgm4w")
 
 [node name="Label" type="Label" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer/BatteryNeedsContainer/BatteryNeed1"]
+layout_mode = 0
 offset_left = 21.0
-offset_top = 8.0
+offset_top = 3.0
 offset_right = 61.0
-offset_bottom = 31.0
+offset_bottom = 26.0
 text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BatteryNeed2" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer/BatteryNeedsContainer"]
-custom_minimum_size = Vector2(70, 40)
+custom_minimum_size = Vector2(70, 20)
 layout_mode = 2
-texture = ExtResource("9_4b0qk")
+texture = ExtResource("9_ed610")
 expand_mode = 2
-flip_h = true
+flip_v = true
 
 [node name="TextureRect" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer/BatteryNeedsContainer/BatteryNeed2"]
+layout_mode = 0
 offset_left = 14.0
-offset_top = 13.0
+offset_top = 7.0
 offset_right = 78.0
-offset_bottom = 77.0
+offset_bottom = 71.0
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("11_pvcu4")
 
 [node name="Label" type="Label" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer/BatteryNeedsContainer/BatteryNeed2"]
 layout_mode = 0
 offset_left = 21.0
-offset_top = 8.0
+offset_top = 3.0
 offset_right = 61.0
-offset_bottom = 31.0
+offset_bottom = 26.0
 text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer"]
+[node name="BatteryCraftButton" type="Button" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(20, 30)
 layout_mode = 2
 theme = ExtResource("8_aijf4")
 text = "Craft"
 
-[node name="UpgradeContainer" type="Container" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder"]
+[node name="UpgradeContainer" type="VBoxContainer" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 198.0
-offset_right = 282.0
-offset_bottom = 374.0
+offset_left = 46.0
+offset_top = 204.0
+offset_right = 264.0
+offset_bottom = 382.0
+
+[node name="CraftBatteryHolder" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+texture = ExtResource("7_aikpf")
+expand_mode = 1
+
+[node name="Sprite2D" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/CraftBatteryHolder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(16, 16)
+texture = ExtResource("13_yr672")
+
+[node name="BatteryNeedsContainer" type="HBoxContainer" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer"]
+layout_mode = 2
+
+[node name="UpgradeNeed1" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/BatteryNeedsContainer"]
+custom_minimum_size = Vector2(70, 30)
+layout_mode = 2
+texture = ExtResource("9_ed610")
+expand_mode = 2
+flip_v = true
+
+[node name="TextureRect" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/BatteryNeedsContainer/UpgradeNeed1"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 56.0
+offset_bottom = 49.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("14_h5kgt")
+
+[node name="UpgradeNeedLabel1" type="Label" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/BatteryNeedsContainer/UpgradeNeed1"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 3.0
+offset_right = 60.0
+offset_bottom = 26.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeNeed2" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/BatteryNeedsContainer"]
+custom_minimum_size = Vector2(70, 30)
+layout_mode = 2
+texture = ExtResource("9_ed610")
+expand_mode = 2
+flip_h = true
+flip_v = true
+
+[node name="TextureRect" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/BatteryNeedsContainer/UpgradeNeed2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 77.0
+offset_bottom = 72.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("15_xac7p")
+
+[node name="UpgradeNeedLabel2" type="Label" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/BatteryNeedsContainer/UpgradeNeed2"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 3.0
+offset_right = 60.0
+offset_bottom = 26.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeNeed3" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/BatteryNeedsContainer"]
+custom_minimum_size = Vector2(70, 30)
+layout_mode = 2
+texture = ExtResource("9_ed610")
+expand_mode = 2
+flip_h = true
+flip_v = true
+
+[node name="TextureRect" type="TextureRect" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/BatteryNeedsContainer/UpgradeNeed3"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 77.0
+offset_bottom = 72.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("16_81skl")
+
+[node name="UpgradeNeedLabel3" type="Label" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/BatteryNeedsContainer/UpgradeNeed3"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 3.0
+offset_right = 60.0
+offset_bottom = 26.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeButton" type="Button" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_aijf4")
+text = "UPGRADE"
 
 [node name="ResourcesLabel" type="Label" parent="InventoryHolder"]
 texture_filter = 5
@@ -531,4 +661,5 @@ text = "CRAFTING / UPGRADES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/CraftingContainer/BatteryCraftButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]

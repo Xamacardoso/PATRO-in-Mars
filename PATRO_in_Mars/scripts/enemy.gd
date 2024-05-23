@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var SPEED = 20.0
 @export var hp = 10.0
-@export var DAMAGE = 0.0
+@export var DAMAGE = 100.0
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var sprite = $AnimatedSprite2D
 
