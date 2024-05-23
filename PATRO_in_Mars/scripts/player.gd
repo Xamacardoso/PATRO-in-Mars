@@ -17,8 +17,8 @@ func _ready() -> void:
 
 # Stats do Player
 @onready var shoot_cooldown_timer : Timer = $LaserGun/ShootCooldown
-var hp = 100.0
-var max_health = 100.0
+var hp = 200.0
+var max_health = 200.0
 var health_recovery = 1.0
 @export var max_energy = 90
 var energy = max_energy
