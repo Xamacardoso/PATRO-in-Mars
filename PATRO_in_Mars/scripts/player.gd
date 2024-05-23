@@ -16,10 +16,11 @@ func _ready() -> void:
 	battery_timer.start()
 
 # Stats do Player
+@onready var shoot_cooldown_timer : Timer = $LaserGun/ShootCooldown
 var hp = 100.0
 var max_health = 100.0
 var health_recovery = 1.0
-var max_energy = 15.0
+@export var max_energy = 70
 var energy = max_energy
 @export var DAMAGE = 10.0
 @export var SPEED = 30.0
@@ -67,13 +68,16 @@ signal add_item
 
 func _unhandled_input(event):
 	if event.is_action_pressed("debug_additem"):
-		resources["dark_shard"]["amount"] += 1
+		for recurso in resources:
+			resources[recurso]["amount"] += 50
 		print(resources["dark_shard"]["amount"])
 	elif event.is_action_pressed("debug_addbattery"):
 		consumables["battery"]["amount"] += 1
 		batteries = consumables["battery"]["amount"]
 		print("Meu inventario tem isso de baterias: " ,consumables["battery"]["amount"])
 		print("Eu tenho essa quantidade de baterias: " , batteries)
+	elif event.is_action_pressed("debug_level_up"):
+		level_up()
 
 ## Diminui a bateria em 1 a cada segundo
 func _on_battery_timer_timeout():
@@ -89,6 +93,12 @@ func _on_battery_timer_timeout():
 			get_tree().change_scene_to_file("res://scenes/game_over_menu.tscn")
 			
 	battery_timer.start()
+
+## Upar o player
+func level_up():
+	DAMAGE *= 1.3
+	SPEED *= 1.15
+	shoot_cooldown_timer.wait_time *= 0.85
 
 ## Tomar hits
 func _on_hurt_box_hurt(DAMAGE):
