@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dijaa50o0tivn"]
+[gd_scene load_steps=16 format=3 uid="uid://dijaa50o0tivn"]
 
 [ext_resource type="Script" path="res://scripts/utils/inventory.gd" id="1_8llto"]
 [ext_resource type="Texture2D" uid="uid://0gayff203vlg" path="res://assets/user_interface/Card X3/Card X5.png" id="1_040do"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://clf1or0nt87mk" path="res://assets/user_interface/Card X3/Card X6.png" id="9_ed610"]
 [ext_resource type="Texture2D" uid="uid://digmhpjn3oqlc" path="res://assets/resources_and_consumables/resources/shard_01c.png" id="10_mgm4w"]
 [ext_resource type="Texture2D" uid="uid://c4ito47daq7fg" path="res://assets/resources_and_consumables/resources/hematite.png" id="11_pvcu4"]
-[ext_resource type="Texture2D" uid="uid://nri1lkxlwqh1" path="res://assets/user_interface/Icons/upgrade.png" id="13_yr672"]
 [ext_resource type="Texture2D" uid="uid://bjimvpq7ufpv8" path="res://assets/resources_and_consumables/resources/shard_01i.png" id="14_h5kgt"]
 [ext_resource type="Texture2D" uid="uid://b1h1o4ujtm4t0" path="res://assets/resources_and_consumables/resources/copper bar.png" id="15_xac7p"]
 [ext_resource type="Texture2D" uid="uid://b2pai7yxorif5" path="res://assets/resources_and_consumables/resources/bronze bar.png" id="16_81skl"]
@@ -532,7 +531,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 pivot_offset = Vector2(16, 16)
-texture = ExtResource("13_yr672")
 
 [node name="BatteryNeedsContainer" type="HBoxContainer" parent="InventoryHolder/HBoxContainer/CraftingUpgrades/CraftingUpgradesHolder/UpgradeContainer"]
 layout_mode = 2
