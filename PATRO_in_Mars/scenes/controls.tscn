@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://ivayn3vd4kaa"]
+
+[ext_resource type="Texture2D" uid="uid://wahum842e64y" path="res://assets/user_interface/wallpapersden.com_mars-minimalist_640x360.jpg" id="1_qrl50"]
+[ext_resource type="Script" path="res://scripts/controls.gd" id="1_woqtj"]
+[ext_resource type="FontFile" uid="uid://cfs0yuxhvbily" path="res://assets/user_interface/fonts/Warzone.ttf" id="2_p0yq4"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_woqtj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.412152, 0.412152, 0.412152, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qrl50")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -377.0
+offset_top = 29.0
+offset_right = 516.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_p0yq4")
+theme_override_font_sizes/font_size = 27
+text = "Welcome to the controls of your adventure!"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 136.0
+offset_right = 66.0
+offset_bottom = 159.0
+theme_override_fonts/font = ExtResource("2_p0yq4")
+theme_override_font_sizes/font_size = 18
+text = ". Here you can see which commands are responsible for which functions:"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 202.0
+offset_right = 66.0
+offset_bottom = 225.0
+theme_override_fonts/font = ExtResource("2_p0yq4")
+theme_override_font_sizes/font_size = 16
+text = "-> Character movement occurs using the arrow keys (in the respective directions)  or the letters A (left), 
+D (right), W (up), and S (down).
+
+-> To access the inventory, press the Tab key.
+
+-> Adding items and batteries is done using the K and J keys, respectively.
+
+-> When approaching the spaceship, you can store your objects with the letter E.
+
+-> Finally, the letter M allows the player to evolve their abilities and weapons when they have sufficient 
+   resources."
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -98.0
+offset_right = 34.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_p0yq4")
+theme_override_font_sizes/font_size = 26
+text = "BACK"
