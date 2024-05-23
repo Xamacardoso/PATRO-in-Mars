@@ -103,7 +103,6 @@ scale = Vector2(1.309, 1.309)
 shape = SubResource("CircleShape2D_goxel")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_x0oow")]
-visible = false
 collision_layer = 8
 collision_mask = 8
 
@@ -115,7 +114,6 @@ shape = SubResource("RectangleShape2D_jteig")
 wait_time = 0.001
 
 [node name="HitBox" parent="." instance=ExtResource("3_la60v")]
-visible = false
 collision_layer = 6
 collision_mask = 6
 
