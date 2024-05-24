@@ -85,9 +85,10 @@ animations = [{
 [node name="enemy_elite" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 7
+motion_mode = 1
 script = ExtResource("1_denyo")
 SPEED = 25.0
-hp = 120.0
+hp = 200.0
 DAMAGE = 20.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -96,6 +97,7 @@ texture_filter = 1
 position = Vector2(1, -15)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_aq8k3")
+autoplay = "default"
 frame_progress = 0.923932
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

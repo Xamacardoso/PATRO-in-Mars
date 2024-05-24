@@ -6,8 +6,8 @@ var progress : float = 1.0
 func _ready():
 	visible = true
 
-func _process(_delta):
-	progress = move_toward(progress, 0.0, 0.0015)
+func _process(delta):
+	progress = move_toward(progress, 0.0, 1.2*delta)
 	color_rect.color.a = progress
 	if progress <= 0.0:
 		queue_free()
