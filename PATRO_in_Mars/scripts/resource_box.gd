@@ -38,6 +38,5 @@ func _on_hurt_box_hurt(DAMAGE):
 		get_tree().get_first_node_in_group("Pickups").add_child(recurso_instancia)
 
 
-
 func _on_despawn_timer_timeout():
 	queue_free()
