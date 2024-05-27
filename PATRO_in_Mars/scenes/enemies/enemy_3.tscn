@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cf0c73wyrrujf"]
+[gd_scene load_steps=21 format=3 uid="uid://cf0c73wyrrujf"]
 
 [ext_resource type="Script" path="res://scripts/enemy_3.gd" id="1_dn513"]
 [ext_resource type="Texture2D" uid="uid://c0woprrf4qtg7" path="res://assets/enemies/Orange/White_Swoosh_VFX/Golem_1_walk.png" id="2_be0vn"]
@@ -82,6 +82,42 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjpsa"]
 
+[sub_resource type="Animation" id="Animation_ql0k8"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.5), Vector2(1, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_n0k34"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e14k4"]
+_data = {
+"RESET": SubResource("Animation_n0k34"),
+"new_animation": SubResource("Animation_ql0k8")
+}
+
 [node name="enemy_3" type="CharacterBody2D"]
 position = Vector2(1, -15)
 scale = Vector2(0.979, 0.979)
@@ -124,5 +160,10 @@ scale = Vector2(1.595, 1.595)
 shape = SubResource("RectangleShape2D_bjpsa")
 
 [node name="DisableHitBoxTimer2" type="Timer" parent="HitBox"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e14k4")
+}
 
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]

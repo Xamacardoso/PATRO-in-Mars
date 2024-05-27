@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2h52syqinutc"]
+
+[ext_resource type="Script" path="res://scripts/enemy2_pieces.gd" id="1_ppafx"]
+
+[node name="enemy2_pieces" type="RigidBody2D"]
+mass = 0.11
+script = ExtResource("1_ppafx")
+
+[node name="texture2" type="Sprite2D" parent="."]
+
+[node name="exited2" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="exited2" to="." method="_on_exited_2_screen_exited"]

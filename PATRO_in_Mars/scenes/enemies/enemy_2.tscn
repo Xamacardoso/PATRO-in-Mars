@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cl4rrl7g17j7u"]
+[gd_scene load_steps=21 format=3 uid="uid://cl4rrl7g17j7u"]
 
 [ext_resource type="Texture2D" uid="uid://dlf82mygrifs1" path="res://assets/enemies/Blue/White_Swoosh_VFX/Golem_1_walk.png" id="1_qh7wo"]
 [ext_resource type="Script" path="res://scripts/enemy_2.gd" id="1_uraas"]
@@ -82,11 +82,49 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vwc8"]
 
+[sub_resource type="Animation" id="Animation_tutsg"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.979, 1), Vector2(0.979, 0.5), Vector2(0.979, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_46xoi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.979, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lynh8"]
+_data = {
+"RESET": SubResource("Animation_46xoi"),
+"new_animation": SubResource("Animation_tutsg")
+}
+
 [node name="Enemy_2" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_uraas")
+pieces = PackedStringArray("res://assets/enemies/Blue/White_Swoosh_VFX/Golem_1_walk_pt2.png", "res://assets/enemies/Blue/White_Swoosh_VFX/Golem_1_walk_pt3.png", "res://assets/enemies/Blue/White_Swoosh_VFX/Golem_1_walk_pt4.png", "res://assets/enemies/Blue/White_Swoosh_VFX/Golem_1_walk_pt5.png")
+impulse = null
 SPEED = 17.0
 hp = 35.0
 DAMAGE = 10.0
@@ -125,5 +163,10 @@ scale = Vector2(1.595, 1.595)
 shape = SubResource("RectangleShape2D_2vwc8")
 
 [node name="DisableHitBoxTimer2" type="Timer" parent="HitBox"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lynh8")
+}
 
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
