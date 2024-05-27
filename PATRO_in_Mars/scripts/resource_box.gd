@@ -9,28 +9,45 @@ var jazida = preload("res://scenes/resource_box.tscn") # Cena da jazida,que irá
 
 func _ready():
 	$DespawnTimer.start()
+	randomize()
 
-var dictionary = {
-	"iron": preload("res://scenes/iron_resource.tscn"),
-	"copper": preload("res://scenes/copper_resource.tscn"),
-	"bronze": preload("res://scenes/bronze_resource.tscn"),
-	"granite": preload("res://scenes/granite_resource.tscn"),
+
+
+var drops = {
+	33 :{
+		"granite": preload("res://scenes/granite_resource.tscn"),
+	},
+	55 :{
+		"copper": preload("res://scenes/copper_resource.tscn"),
+	},
+	77 :{
+		"bronze": preload("res://scenes/bronze_resource.tscn"),
+	},
+	100 :{
+		"iron": preload("res://scenes/iron_resource.tscn"),
+	},
 }
 
-var recursos_pra_cena: Array = dictionary.values() # Criando um arreio de dicionário para posteriormente fazer o random disso.
+var recursos_pra_cena: Array = drops.keys() # Criando um arreio de dicionário para posteriormente fazer o random disso.
 
+
+func roll_loot():
+	var chance_roll = randi() % 101
+	for rate in drops.keys():
+		if chance_roll <= rate:
+			return rate
 
 
 func _on_hurt_box_hurt(DAMAGE):
 	hp -= DAMAGE
 	if hp <= 0:
 		# Escolhendo um recurso para aparecer em meio a esse cenário
-		var escolhendo_recurso = randi() % recursos_pra_cena.size()
+		var escolhendo_recurso = randi() % 100
 		# Acessando o recurso escolhido
-		var acessando_recurso = recursos_pra_cena[escolhendo_recurso]
+		var acessando_recurso = roll_loot()
 	
 		# Agora,tentarei criar o recurso para aparecer na cena
-		var recurso_instancia = acessando_recurso.instantiate()
+		var recurso_instancia = drops.get(acessando_recurso).values()[0].instantiate()
 		# Tentarei colocar o recurso criado no local onde a jazida estava
 		recurso_instancia.global_position = self.global_position
 		self.queue_free() #hp chega em zero e a cena da jazida é retirada do world.
