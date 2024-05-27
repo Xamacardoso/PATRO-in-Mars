@@ -115,6 +115,10 @@ offset_right = 53.6291
 offset_bottom = 11.3505
 text = "0 / 45"
 
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(1.25988, 1.25988)
+
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
