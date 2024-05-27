@@ -1,48 +1,48 @@
-[gd_scene load_steps=19 format=3 uid="uid://c77dymgc3sl4t"]
+[gd_scene load_steps=22 format=3 uid="uid://c77dymgc3sl4t"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_11g44"]
-[ext_resource type="Texture2D" uid="uid://dl5j7r3uya68t" path="res://assets/enemies/Blue/No_Swoosh_VFX/Golem_1_walk.png" id="2_1kgm4"]
-[ext_resource type="PackedScene" uid="uid://paq6ku5etsqo" path="res://scenes/utils/hurt_box.tscn" id="2_2ygld"]
-[ext_resource type="PackedScene" uid="uid://dlyx4yo8ytxlx" path="res://scenes/utils/hit_box.tscn" id="3_1fk3w"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_c84lo"]
+[ext_resource type="Texture2D" uid="uid://dl5j7r3uya68t" path="res://assets/enemies/Blue/No_Swoosh_VFX/Golem_1_walk.png" id="2_hrp3p"]
+[ext_resource type="PackedScene" uid="uid://paq6ku5etsqo" path="res://scenes/utils/hurt_box.tscn" id="3_duyw5"]
+[ext_resource type="PackedScene" uid="uid://dlyx4yo8ytxlx" path="res://scenes/utils/hit_box.tscn" id="4_s5g5u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1chuo"]
-atlas = ExtResource("2_1kgm4")
+atlas = ExtResource("2_hrp3p")
 region = Rect2(0, 0, 90, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_me74r"]
-atlas = ExtResource("2_1kgm4")
+atlas = ExtResource("2_hrp3p")
 region = Rect2(90, 0, 90, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3fsy"]
-atlas = ExtResource("2_1kgm4")
+atlas = ExtResource("2_hrp3p")
 region = Rect2(180, 0, 90, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ojn2"]
-atlas = ExtResource("2_1kgm4")
+atlas = ExtResource("2_hrp3p")
 region = Rect2(270, 0, 90, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_puyeb"]
-atlas = ExtResource("2_1kgm4")
+atlas = ExtResource("2_hrp3p")
 region = Rect2(360, 0, 90, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bovor"]
-atlas = ExtResource("2_1kgm4")
+atlas = ExtResource("2_hrp3p")
 region = Rect2(450, 0, 90, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6of2"]
-atlas = ExtResource("2_1kgm4")
+atlas = ExtResource("2_hrp3p")
 region = Rect2(540, 0, 90, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nsgtc"]
-atlas = ExtResource("2_1kgm4")
+atlas = ExtResource("2_hrp3p")
 region = Rect2(630, 0, 90, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ok3vr"]
-atlas = ExtResource("2_1kgm4")
+atlas = ExtResource("2_hrp3p")
 region = Rect2(720, 0, 90, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmyqr"]
-atlas = ExtResource("2_1kgm4")
+atlas = ExtResource("2_hrp3p")
 region = Rect2(810, 0, 90, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wh5g7"]
@@ -89,18 +89,55 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxl6p"]
 
+[sub_resource type="Animation" id="Animation_1k1m1"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m07x5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8wcm"]
+_data = {
+"RESET": SubResource("Animation_m07x5"),
+"new_animation": SubResource("Animation_1k1m1")
+}
+
 [node name="Enemy_1" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 8
 collision_mask = 7
 motion_mode = 1
-script = ExtResource("1_11g44")
+script = ExtResource("1_c84lo")
+pieces = PackedStringArray("res://assets/enemies/Blue/No_Swoosh_VFX/Golem_1_walk_pt2-2.png", "res://assets/enemies/Blue/No_Swoosh_VFX/Golem_1_walk_pt2.png", "res://assets/enemies/Blue/No_Swoosh_VFX/Golem_1_walk_pt3-2.png", "res://assets/enemies/Blue/No_Swoosh_VFX/Golem_1_walk_pt3.png")
 SPEED = 12.0
 hp = 20.0
 DAMAGE = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1, -15)
+position = Vector2(1, -2)
 sprite_frames = SubResource("SpriteFrames_wh5g7")
 autoplay = "default"
 
@@ -108,7 +145,7 @@ autoplay = "default"
 scale = Vector2(1.30875, 1.30875)
 shape = SubResource("CircleShape2D_v2ckw")
 
-[node name="HurtBox" parent="." instance=ExtResource("2_2ygld")]
+[node name="HurtBox" parent="." instance=ExtResource("3_duyw5")]
 modulate = Color(0, 1, 0.117647, 1)
 collision_layer = 8
 collision_mask = 8
@@ -121,13 +158,18 @@ shape = SubResource("RectangleShape2D_cftpr")
 [node name="DisableTimer" parent="HurtBox" index="1"]
 wait_time = 0.126
 
-[node name="HitBox" parent="." instance=ExtResource("3_1fk3w")]
+[node name="HitBox" parent="." instance=ExtResource("4_s5g5u")]
 collision_layer = 6
 collision_mask = 6
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 scale = Vector2(1.59452, 1.59452)
 shape = SubResource("RectangleShape2D_yxl6p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g8wcm")
+}
 
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 

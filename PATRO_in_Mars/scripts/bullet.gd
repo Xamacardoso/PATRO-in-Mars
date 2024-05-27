@@ -27,3 +27,8 @@ func _on_bullet_screen_notifier_screen_exited():
 ## Hit da bala
 func _on_hit_box_area_entered(area):
 	_on_bullet_screen_notifier_screen_exited()
+
+
+func _on_hit_box_body_entered(body):
+	if body.has_method("break_sprite"):
+		body.break_sprite()
