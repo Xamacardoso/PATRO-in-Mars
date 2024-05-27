@@ -14,13 +14,13 @@ func _ready():
 
 
 var drops = {
-	33 :{
+	35 :{
 		"granite": preload("res://scenes/granite_resource.tscn"),
 	},
-	55 :{
+	58 :{
 		"copper": preload("res://scenes/copper_resource.tscn"),
 	},
-	77 :{
+	79 :{
 		"bronze": preload("res://scenes/bronze_resource.tscn"),
 	},
 	100 :{
@@ -41,8 +41,6 @@ func roll_loot():
 func _on_hurt_box_hurt(DAMAGE):
 	hp -= DAMAGE
 	if hp <= 0:
-		# Escolhendo um recurso para aparecer em meio a esse cenário
-		var escolhendo_recurso = randi() % 100
 		# Acessando o recurso escolhido
 		var acessando_recurso = roll_loot()
 	
