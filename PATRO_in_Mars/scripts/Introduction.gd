@@ -4,6 +4,7 @@ extends Control
 
 func _ready():
 	continue_button.button_down.connect(on_start_game_pressed)
+	continue_button.grab_focus()
 
 
 func on_start_game_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6nq3tjl0f5xn"]
+[gd_scene load_steps=12 format=3 uid="uid://b6nq3tjl0f5xn"]
 
 [ext_resource type="Texture2D" uid="uid://bodr6mre1uoot" path="res://assets/Nairan - Bomber - Base.png" id="1_aelb5"]
 [ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_v6t1j"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bjimvpq7ufpv8" path="res://assets/resources_and_consumables/resources/shard_01i.png" id="5_m36dj"]
 [ext_resource type="Texture2D" uid="uid://c4ito47daq7fg" path="res://assets/resources_and_consumables/resources/hematite.png" id="6_ilybn"]
 [ext_resource type="Texture2D" uid="uid://dc3vlnjfgycwr" path="res://assets/resources_and_consumables/resources/iron bar.png" id="7_ugai4"]
+[ext_resource type="FontFile" uid="uid://cfs0yuxhvbily" path="res://assets/user_interface/fonts/Warzone.ttf" id="8_bwylx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dp52"]
 
@@ -114,6 +115,19 @@ offset_top = -11.6495
 offset_right = 53.6291
 offset_bottom = 11.3505
 text = "0 / 45"
+
+[node name="Label" type="Label" parent="ShipPanel"]
+layout_mode = 0
+offset_left = -1.22812
+offset_top = 88.0
+offset_right = 190.772
+offset_bottom = 123.0
+scale = Vector2(0.177687, 0.26501)
+theme_override_fonts/font = ExtResource("8_bwylx")
+theme_override_font_sizes/font_size = 16
+text = "PRESS 'E' TO 
+DEPOSIT RESOURCES"
+horizontal_alignment = 1
 
 [node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(0, 2)

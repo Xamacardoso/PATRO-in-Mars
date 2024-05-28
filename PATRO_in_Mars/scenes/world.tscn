@@ -1,14 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://06ok3lyso3bo"]
+[gd_scene load_steps=26 format=3 uid="uid://06ok3lyso3bo"]
 
 [ext_resource type="Texture2D" uid="uid://bpkgg555lo5q8" path="res://assets/world/tileset.png" id="1_milmd"]
 [ext_resource type="Script" path="res://scripts/utils/world.gd" id="1_o4y7g"]
 [ext_resource type="PackedScene" uid="uid://dpo7e0v52us51" path="res://scenes/player.tscn" id="2_b36kp"]
-[ext_resource type="PackedScene" path="res://scenes/utils/enemy_spawner.tscn" id="3_bnh6g"]
+[ext_resource type="PackedScene" uid="uid://bahkrpnlm24qw" path="res://scenes/utils/enemy_spawner.tscn" id="3_bnh6g"]
 [ext_resource type="PackedScene" uid="uid://b5ws0ev1478r" path="res://scenes/pause_menu.tscn" id="4_kvcbl"]
 [ext_resource type="Script" path="res://scripts/utils/enemy_spawn_info.gd" id="5_iluam"]
+[ext_resource type="PackedScene" uid="uid://c77dymgc3sl4t" path="res://scenes/enemies/enemy.tscn" id="5_jdiua"]
 [ext_resource type="PackedScene" uid="uid://dijaa50o0tivn" path="res://scenes/utils/inventory.tscn" id="6_cdg35"]
-[ext_resource type="PackedScene" path="res://scenes/utils/resource_box_spawner.tscn" id="6_dfjkq"]
+[ext_resource type="PackedScene" uid="uid://06em18lkth6j" path="res://scenes/utils/resource_box_spawner.tscn" id="6_dfjkq"]
 [ext_resource type="PackedScene" uid="uid://dies5ews33ypj" path="res://scenes/utils/hud_indicators.tscn" id="6_i31wk"]
+[ext_resource type="PackedScene" uid="uid://di5u0pkfegum" path="res://scenes/enemies/enemy_elite.tscn" id="7_svfk2"]
+[ext_resource type="PackedScene" uid="uid://cl4rrl7g17j7u" path="res://scenes/enemies/enemy_2.tscn" id="8_lrid3"]
+[ext_resource type="PackedScene" uid="uid://cf0c73wyrrujf" path="res://scenes/enemies/enemy_3.tscn" id="9_dmpgp"]
 [ext_resource type="PackedScene" uid="uid://bw4nabip3flfc" path="res://scenes/utils/fade_out_transition.tscn" id="10_h4c3i"]
 [ext_resource type="PackedScene" uid="uid://b6nq3tjl0f5xn" path="res://scenes/spaceship.tscn" id="11_0l0m3"]
 [ext_resource type="AudioStream" uid="uid://cvu36cvb61muy" path="res://sounds/game_music.wav" id="12_bumre"]
@@ -702,6 +706,7 @@ sources/0 = SubResource("TileSetAtlasSource_s1x3b")
 script = ExtResource("5_iluam")
 time_start = 1
 time_end = 180
+enemy = ExtResource("5_jdiua")
 enemy_num = 1
 enemy_spawn_delay = 2
 
@@ -709,6 +714,7 @@ enemy_spawn_delay = 2
 script = ExtResource("5_iluam")
 time_start = 180
 time_end = 181
+enemy = ExtResource("7_svfk2")
 enemy_num = 1
 enemy_spawn_delay = 1
 
@@ -716,6 +722,7 @@ enemy_spawn_delay = 1
 script = ExtResource("5_iluam")
 time_start = 180
 time_end = 360
+enemy = ExtResource("5_jdiua")
 enemy_num = 1
 enemy_spawn_delay = 2
 
@@ -723,6 +730,7 @@ enemy_spawn_delay = 2
 script = ExtResource("5_iluam")
 time_start = 360
 time_end = 361
+enemy = ExtResource("7_svfk2")
 enemy_num = 2
 enemy_spawn_delay = 1
 
@@ -730,6 +738,7 @@ enemy_spawn_delay = 1
 script = ExtResource("5_iluam")
 time_start = 360
 time_end = 600
+enemy = ExtResource("8_lrid3")
 enemy_num = 2
 enemy_spawn_delay = 2
 
@@ -737,6 +746,7 @@ enemy_spawn_delay = 2
 script = ExtResource("5_iluam")
 time_start = 600
 time_end = 900
+enemy = ExtResource("9_dmpgp")
 enemy_num = 1
 enemy_spawn_delay = 2
 
@@ -744,6 +754,7 @@ enemy_spawn_delay = 2
 script = ExtResource("5_iluam")
 time_start = 900
 time_end = 1200
+enemy = ExtResource("7_svfk2")
 enemy_num = 2
 enemy_spawn_delay = 1
 

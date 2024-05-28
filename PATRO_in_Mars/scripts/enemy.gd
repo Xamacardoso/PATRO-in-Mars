@@ -1,10 +1,5 @@
 extends CharacterBody2D
 
-const enemy_pieces = preload("res://scenes/enemies/enemy1_pieces.tscn")
-@onready var animation_player = $AnimationPlayer as AnimationPlayer
-@export var pieces : PackedStringArray
-@export var impulse = 50
-
 @export var SPEED = 20.0
 @export var hp = 10.0
 @export var DAMAGE = 100.0
@@ -47,15 +42,7 @@ func _on_hurt_box_hurt(DAMAGE):
 		resource_instance.global_position = self.global_position
 		velocity = Vector2.ZERO
 		#await sprite.animation_finished
-		self.break_sprite()
 		# Adicionando o recurso na cena
 		get_tree().get_first_node_in_group("Pickups").add_child(resource_instance)
-		
-func break_sprite():
-	for piece in pieces.size():
-		var piece_instance = enemy_pieces.instantiate()
-		get_parent().add_child(piece_instance)
-		piece_instance.get_node("texture").texture = load(pieces[piece])
-		piece_instance.global_position = global_position
-		piece_instance.apply_impulse(Vector2(randi_range(-impulse,impulse), randi_range(-impulse, impulse * 2)))
-	queue_free()
+		self.queue_free()
+

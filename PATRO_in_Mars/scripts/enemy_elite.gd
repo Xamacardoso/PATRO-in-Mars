@@ -1,11 +1,5 @@
 extends CharacterBody2D
 
-const enemy_elite_pieces = preload("res://scenes/enemies/enemy_elite_pieces.tscn")
-@onready var animation_player4 = $AnimationPlayer as AnimationPlayer
-@export var pieces4 : PackedStringArray
-@export var impulse4 = 50
-
-
 @export var SPEED = 20.0
 @export var hp = 10.0
 @export var DAMAGE = 0.0
@@ -48,18 +42,8 @@ func _on_hurt_box_hurt(DAMAGE):
 		# Tentarei colocar o recurso criado no local onde a jazida estava
 		resource_instance.global_position = self.global_position
 		velocity = Vector2.ZERO
-		#await sprite.animation_finished
-		self.queue_free() 
-		# Adicionando o recurso na cena
 		get_tree().get_first_node_in_group("Pickups").add_child(resource_instance)
+	
+		self.queue_free() 
 		
 		
-func break_sprite4():
-	for piece in pieces4.size():
-		var piece_instance = enemy_elite_pieces.instantiate()
-		get_parent().add_child(piece_instance)
-		piece_instance.get_node("texture_elite").texture = load(pieces4[piece])
-		piece_instance.global_position = global_position
-		piece_instance.apply_impulse(Vector2(randi_range(-impulse4,impulse4), randi_range(-impulse4, impulse4 * 2)))
-	queue_free()
-

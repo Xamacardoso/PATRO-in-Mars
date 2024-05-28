@@ -143,6 +143,7 @@ shape = SubResource("CircleShape2D_goxel")
 [node name="HurtBox" parent="." instance=ExtResource("2_x0oow")]
 collision_layer = 8
 collision_mask = 8
+HurtBoxType = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox"]
 scale = Vector2(2.4, 2.4)
